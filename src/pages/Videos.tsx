@@ -41,7 +41,7 @@ const Videos = () => {
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tutorialVideos.map((video, index) => (
-          <Card key={index} className="flex flex-col">
+          <Card key={index} className="flex flex-col border-temple-200">
             <div className="aspect-video w-full bg-temple-100">
               <iframe
                 src={video.videoUrl}
@@ -51,11 +51,11 @@ const Videos = () => {
                 allowFullScreen
               />
             </div>
-            <CardHeader>
-              <CardTitle className="text-xl">{video.title}</CardTitle>
-              <CardDescription>{video.description}</CardDescription>
+            <CardHeader className="bg-temple-50">
+              <CardTitle className="text-xl text-temple-900">{video.title}</CardTitle>
+              <CardDescription className="text-temple-600">{video.description}</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-2 mt-auto">
+            <CardContent className="space-y-2 mt-auto bg-temple-50">
               <div className="flex justify-between text-sm text-temple-600">
                 <span>Instructor: {video.instructor}</span>
                 <span>Duration: {video.duration}</span>

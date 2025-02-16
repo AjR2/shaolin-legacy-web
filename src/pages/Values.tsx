@@ -53,16 +53,16 @@ const Values = () => {
       <h1 className="text-3xl font-bold text-temple-900 mb-8">Our Values</h1>
       
       <div className="grid md:grid-cols-2 gap-8">
-        <Card className="bg-temple-50">
-          <CardHeader>
-            <CardTitle>Rules of the Training Hall</CardTitle>
-            <CardDescription>Guidelines for respectful and safe practice</CardDescription>
+        <Card className="bg-temple-50 border-temple-200">
+          <CardHeader className="bg-temple-100/50">
+            <CardTitle className="text-temple-900">Rules of the Training Hall</CardTitle>
+            <CardDescription className="text-temple-600">Guidelines for respectful and safe practice</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="space-y-3">
               {rules.map((rule, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-temple-100 text-temple-800 rounded-full text-sm">
+                  <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-temple-200 text-temple-800 rounded-full text-sm">
                     {index + 1}
                   </span>
                   <span className="text-temple-800">{rule}</span>
@@ -72,17 +72,17 @@ const Values = () => {
           </CardContent>
         </Card>
 
-        <Card className="bg-temple-50">
-          <CardHeader>
-            <CardTitle>Goals of Kung Fu Training</CardTitle>
-            <CardDescription>What we strive to achieve through practice</CardDescription>
+        <Card className="bg-temple-50 border-temple-200">
+          <CardHeader className="bg-temple-100/50">
+            <CardTitle className="text-temple-900">Goals of Kung Fu Training</CardTitle>
+            <CardDescription className="text-temple-600">What we strive to achieve through practice</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {goals.map((goal, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-white rounded-lg border border-temple-100"
+                  className="p-4 bg-white rounded-lg border border-temple-200 hover:bg-temple-50 transition-colors"
                 >
                   <h3 className="font-semibold text-temple-900 mb-1">
                     {goal.title}

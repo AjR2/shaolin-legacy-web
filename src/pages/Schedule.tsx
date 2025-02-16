@@ -148,15 +148,15 @@ const Schedule = () => {
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {weeklySchedule.map((day) => (
-          <Card key={day.day} className="flex flex-col">
-            <CardHeader className="bg-temple-50">
+          <Card key={day.day} className="flex flex-col border-temple-200">
+            <CardHeader className="bg-temple-100/50">
               <CardTitle className="text-xl text-temple-900">{day.day}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-1 space-y-4 pt-6">
+            <CardContent className="flex-1 space-y-4 pt-6 bg-temple-50">
               {day.classes.map((classItem, index) => (
                 <div
                   key={index}
-                  className="p-4 bg-white rounded-lg border border-temple-100"
+                  className="p-4 bg-white rounded-lg border border-temple-200 hover:bg-temple-50 transition-colors"
                 >
                   <h3 className="font-semibold text-temple-900">{classItem.name}</h3>
                   <p className="text-sm text-temple-600 mt-1">{classItem.time}</p>
@@ -164,7 +164,7 @@ const Schedule = () => {
                     <span className="text-sm text-temple-600">
                       {classItem.instructor}
                     </span>
-                    <span className="inline-block px-2 py-1 bg-temple-50 text-temple-800 text-xs rounded">
+                    <span className="inline-block px-2 py-1 bg-temple-100 text-temple-800 text-xs rounded">
                       {classItem.level}
                     </span>
                   </div>
