@@ -1,10 +1,35 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
 
   const menuItems = [
     { path: "/", label: "Home" },
@@ -35,6 +60,15 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+            {user ? (
+              <Button onClick={handleLogout} variant="outline">
+                Logout
+              </Button>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline">Login</Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -63,6 +97,25 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+            {user ? (
+              <Button
+                onClick={handleLogout}
+                variant="outline"
+                className="w-full text-left"
+              >
+                Logout
+              </Button>
+            ) : (
+              <Link
+                to="/auth"
+                onClick={() => setIsOpen(false)}
+                className="block w-full"
+              >
+                <Button variant="outline" className="w-full">
+                  Login
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       )}

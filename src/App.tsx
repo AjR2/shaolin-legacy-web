@@ -10,6 +10,7 @@ import Lineage from "./pages/Lineage";
 import Videos from "./pages/Videos";
 import Schedule from "./pages/Schedule";
 import Values from "./pages/Values";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/videos" element={<Videos />} />
               <Route path="/schedule" element={<Schedule />} />
               <Route path="/values" element={<Values />} />
+              <Route path="/auth" element={<Auth />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
