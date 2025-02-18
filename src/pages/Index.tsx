@@ -31,18 +31,18 @@ const announcements = [
 const carouselImages = [
   {
     url: "SifuWoodStance.png",
-    alt: "Sifu practicing kung fu",
+    alt: "Sifu practicing kung fu in the woods",
     caption: "Weapons and Woods",
   },
   {
-    url: "https://images.unsplash.com/photo-1617870952348-7524edfb61b7?w=800&q=80",
-    alt: "Temple meditation garden",
-    caption: "Our peaceful meditation garden",
+    url: "ShiDonnie.png",
+    alt: "Sifu and Donnie Yen squaring off to the camera",
+    caption: "Sifu and Donnie yen",
   },
   {
-    url: "https://images.unsplash.com/photo-1618361689903-500d4237c52c?w=800&q=80",
-    alt: "Training equipment",
-    caption: "Traditional training equipment",
+    url: "asherComp.png",
+    alt: "Student at competition",
+    caption: "Shaolin in the community",
   },
 ];
 
