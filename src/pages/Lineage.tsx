@@ -10,11 +10,11 @@ import {
 const Lineage = () => {
   const instructors = [
     {
-      name: "Master Chen Wei",
+      name: "Shi Yanruan",
       title: "Head Instructor",
       experience: "35 years of practice",
       specialties: "Traditional Shaolin Forms, Meditation",
-      image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=400&q=80",
+      image: "ShiYanruan.png",
     },
     {
       name: "Sifu Li Ming",
