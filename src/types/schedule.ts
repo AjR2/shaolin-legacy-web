@@ -12,4 +12,5 @@ export interface Attendance {
   id: string;
   class_id: string;
   attended: boolean;
+  attended_date?: string;
 }

@@ -106,7 +106,12 @@ const Schedule = () => {
         // Register
         const { data, error } = await supabase
           .from('attendance')
-          .insert([{ user_id: user.id, class_id: classId, attended: false }])
+          .insert([{ 
+            user_id: user.id, 
+            class_id: classId, 
+            attended: false,
+            status: 'confirmed'
+          }])
           .select();
 
         if (error) throw error;
@@ -133,16 +138,26 @@ const Schedule = () => {
     if (!attendance) return;
 
     try {
+      const today = new Date().toISOString().split('T')[0];
       const { error } = await supabase
         .from('attendance')
-        .update({ attended: !attendance.attended })
+        .update({ 
+          attended: !attendance.attended,
+          attended_date: !attendance.attended ? today : null
+        })
         .eq('id', attendance.id);
 
       if (error) throw error;
 
       setUserAttendance(prev =>
         prev.map(a =>
-          a.id === attendance.id ? { ...a, attended: !a.attended } : a
+          a.id === attendance.id 
+            ? { 
+                ...a, 
+                attended: !a.attended,
+                attended_date: !a.attended ? today : null
+              } 
+            : a
         )
       );
 
