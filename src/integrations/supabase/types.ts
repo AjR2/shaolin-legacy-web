@@ -11,6 +11,7 @@ export type Database = {
     Tables: {
       attendance: {
         Row: {
+          attended: boolean | null
           class_id: string
           created_at: string | null
           id: string
@@ -18,6 +19,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          attended?: boolean | null
           class_id: string
           created_at?: string | null
           id?: string
@@ -25,6 +27,7 @@ export type Database = {
           user_id: string
         }
         Update: {
+          attended?: boolean | null
           class_id?: string
           created_at?: string | null
           id?: string
