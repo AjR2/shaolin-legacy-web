@@ -9,38 +9,44 @@ import {
 
 const Values = () => {
   const rules = [
-    "Arrive 10 minutes early to prepare for class",
-    "Bow when entering and leaving the training hall",
-    "Wear clean, appropriate training attire",
-    "Remove shoes before stepping on training mats",
-    "Show respect to instructors and fellow students",
-    "No food or gum during training",
-    "Maintain personal hygiene and keep nails trimmed",
-    "Inform instructor if you need to leave class early",
-    "Practice moves only as instructed by teachers",
-    "Keep training area clean and organized"
+    "No Street shoes allowed in the training area.  Only Kungfu shoes are allowed.",
+    "If you are late for class, WAIT in the waiting area until the master asks you to join the class.",
+    "Your sash must be worn at all times.",
+    "Always wear school uniforms when training and keep your shirts tucked inside your Kungfu pants.",
+    "Call all Kungfu masters Shi Fu (师父)---which means  teacher.  Show respect with a proper bow.",
+    "Greet all guests with proper etiquette.",
+    "Present a bow when you enter the studio and before leaving the studio.",
+    "Bow to Shi Fu when class begins and at the end of the class.",
+    "Keep your school clean by picking up your belongings before you leave.  Put any borrowed school items back to their proper place.",
+    "Do not talk in a loud voice when you are in the studio.",
+    "Shi Fu(师父) is the only person who is allowed to provide instructions to students.  No one else is allowed to teach in the studio.",
+    "You must let Shi Fu know when you have to leave the training area before the end of class or to take care of personal business.  You must let Shi Fu know when you return the training area.",
+    "When you can not perform some exercises, please ask Shi Fu to provide you with other forms of exercises instead.",
+    "Shaolin Traditional Kung Fu reserves the rights of not offering services.",
+    "Should you have any questions, opinions, comments regarding training, management or any issues concerning Shaolin Traditional Kung Fu please talk to the office manager to discuss the issues.  Shi Fu is only responsible for teaching Kungfu",
+    "For students to maintain the rights for making up lost classes, please contact Shaolin Traditional Kung Fu at least 24 hours in advance, when you can not attend classes. Shaolin Traditional Kung Fu will take it into account if it is an emergency."
   ];
 
   const goals = [
     {
-      title: "Physical Development",
-      description: "Build strength, flexibility, and coordination through consistent practice"
+      title: "Improve students’ physical strength",
+      description: "Practicing various Shaolin Kungfu movements helps to improve muscle coordination, flexibility, and strength, leading to improved health."
     },
     {
-      title: "Mental Discipline",
-      description: "Develop focus, patience, and perseverance in training and daily life"
+      title: "Develop the mind",
+      description: "Practicing Shaolin Kungfu positively stimulates the mind, helping concentration, encouraging creativity, and reducing stress."
     },
     {
-      title: "Self-Defense",
-      description: "Learn practical techniques for personal protection and awareness"
+      title: "Improve problem solving ability",
+      description: "Practicing Shaolin Kungfu requires patience and the ability to find ways to overcome difficulties, inspiring students to reach for higher goals in their lives."
     },
     {
-      title: "Character Building",
-      description: "Cultivate humility, respect, and integrity through martial arts principles"
+      title: "Respect for others",
+      description: "Practicing Shaolin Kungfu emphasizes the importance of respecting teachers, parents, friends, and others."
     },
     {
-      title: "Cultural Understanding",
-      description: "Gain appreciation for Chinese martial arts history and philosophy"
+      title: "Building Confidence",
+      description: "It is very important for children to have confidence when handling issues in their daily lives, especially issues pertaining to school and family. Practicing Shaolin Kungfu unquestionably improves all practitioners’ stress and confidence levels."
     },
     {
       title: "Community",
