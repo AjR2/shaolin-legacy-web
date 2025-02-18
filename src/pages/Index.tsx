@@ -16,23 +16,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const announcements = [
   {
     title: "New Beginner Class Starting",
-    date: "March 15, 2024",
+    date: "February 25 2025",
     content:
       "Join us for our new beginner class starting next month. Perfect for those new to Kung Fu.",
   },
   {
-    title: "Master Wong Workshop",
-    date: "April 1, 2024",
+    title: "Closed for the Holidays",
+    date: "12/18/2024",
     content:
-      "Special workshop with Master Wong focusing on advanced techniques and philosophy.",
+      "Shaolin Temple Rockville will be closed from 12/21/24-1/2/25. See Sifu to make up a class",
   },
 ];
 
 const carouselImages = [
   {
-    url: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80",
-    alt: "Students practicing kung fu",
-    caption: "Morning practice session",
+    url: "SifuWoodStance.png",
+    alt: "Sifu practicing kung fu",
+    caption: "Weapons and Woods",
   },
   {
     url: "https://images.unsplash.com/photo-1617870952348-7524edfb61b7?w=800&q=80",

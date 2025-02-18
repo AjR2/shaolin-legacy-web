@@ -10,10 +10,10 @@ import {
 const Lineage = () => {
   const instructors = [
     {
-      name: "Master Chen Wei",
+      name: "Ji Long ",
       title: "Head Instructor",
-      experience: "35 years of practice",
-      specialties: "Traditional Shaolin Forms, Meditation",
+      experience: "1620 - ?",
+      specialties: "Traditional ShaolJi Long was from Longfeng county in Shanxi Province during the late Ming Dynasty and was recognized as the founder of XinYiBa as well as Liu He Fist (XinYi Fist , XingYi Fist etc.)",
       image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=400&q=80",
     },
     {
