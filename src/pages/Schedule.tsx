@@ -3,28 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-interface Class {
-  id: string;
-  name: string;
-  time: string;
-  day: string;
-  level: string;
-  instructor: string;
-}
-
-interface Attendance {
-  id: string;
-  class_id: string;
-  attended: boolean;
-}
+import { Class, Attendance } from "@/types/schedule";
+import { DaySchedule } from "@/components/schedule/DaySchedule";
 
 const Schedule = () => {
   const navigate = useNavigate();
@@ -98,14 +78,6 @@ const Schedule = () => {
     fetchUserAttendance();
   }, [user, toast]);
 
-  const isRegistered = (classId: string) => {
-    return userAttendance.some(a => a.class_id === classId);
-  };
-
-  const getAttendanceRecord = (classId: string) => {
-    return userAttendance.find(a => a.class_id === classId);
-  };
-
   const handleRegistration = async (classId: string) => {
     if (!user) {
       navigate('/auth');
@@ -113,7 +85,9 @@ const Schedule = () => {
     }
 
     try {
-      if (isRegistered(classId)) {
+      const isRegistered = userAttendance.some(a => a.class_id === classId);
+
+      if (isRegistered) {
         // Unregister
         const { error } = await supabase
           .from('attendance')
@@ -155,7 +129,7 @@ const Schedule = () => {
   const handleAttendance = async (classId: string) => {
     if (!user) return;
 
-    const attendance = getAttendanceRecord(classId);
+    const attendance = userAttendance.find(a => a.class_id === classId);
     if (!attendance) return;
 
     try {
@@ -199,51 +173,14 @@ const Schedule = () => {
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {Object.entries(weeklySchedule).map(([day, classes]) => (
-          <Card key={day} className="flex flex-col">
-            <CardHeader className="bg-temple-50">
-              <CardTitle className="text-xl text-temple-900">{day}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1 space-y-4 pt-6">
-              {classes.map((classItem) => {
-                const attendance = getAttendanceRecord(classItem.id);
-                return (
-                  <div
-                    key={classItem.id}
-                    className="p-4 bg-white rounded-lg border border-temple-100"
-                  >
-                    <h3 className="font-semibold text-temple-900">{classItem.name}</h3>
-                    <p className="text-sm text-temple-600 mt-1">{classItem.time}</p>
-                    <div className="flex justify-between items-center mt-2">
-                      <span className="text-sm text-temple-600">
-                        {classItem.instructor}
-                      </span>
-                      <span className="inline-block px-2 py-1 bg-temple-50 text-temple-800 text-xs rounded">
-                        {classItem.level}
-                      </span>
-                    </div>
-                    <div className="space-y-2 mt-3">
-                      <Button
-                        className="w-full"
-                        variant={isRegistered(classItem.id) ? "destructive" : "default"}
-                        onClick={() => handleRegistration(classItem.id)}
-                      >
-                        {isRegistered(classItem.id) ? "Cancel Registration" : "Register"}
-                      </Button>
-                      {attendance && (
-                        <Button
-                          className="w-full"
-                          variant={attendance.attended ? "secondary" : "outline"}
-                          onClick={() => handleAttendance(classItem.id)}
-                        >
-                          {attendance.attended ? "✓ Attended" : "Mark as Attended"}
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </CardContent>
-          </Card>
+          <DaySchedule
+            key={day}
+            day={day}
+            classes={classes}
+            userAttendance={userAttendance}
+            onRegister={handleRegistration}
+            onAttendance={handleAttendance}
+          />
         ))}
       </div>
     </div>
