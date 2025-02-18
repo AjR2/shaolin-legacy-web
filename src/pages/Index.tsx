@@ -40,8 +40,8 @@ const carouselImages = [
     caption: "Sifu and Donnie yen",
   },
   {
-    url: "asherComp.png",
-    alt: "Student at competition",
+    url: "ShaolinCommunity.png",
+    alt: "Shaolin Performance in the community",
     caption: "Shaolin in the community",
   },
 ];
