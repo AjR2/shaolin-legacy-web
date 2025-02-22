@@ -18,7 +18,7 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className="bg-temple-900 text-white">
+    <nav className="bg-background text-foreground border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4">
@@ -34,7 +34,7 @@ export const Navigation = () => {
             <Link
               to="/lineage"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/lineage" ? "bg-temple-700" : "hover:bg-temple-800"
+                location.pathname === "/lineage" ? "bg-accent" : "hover:bg-accent"
               }`}
             >
               Lineage
@@ -42,7 +42,7 @@ export const Navigation = () => {
             <Link
               to="/videos"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/videos" ? "bg-temple-700" : "hover:bg-temple-800"
+                location.pathname === "/videos" ? "bg-accent" : "hover:bg-accent"
               }`}
             >
               Videos
@@ -50,7 +50,7 @@ export const Navigation = () => {
             <Link
               to="/schedule"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/schedule" ? "bg-temple-700" : "hover:bg-temple-800"
+                location.pathname === "/schedule" ? "bg-accent" : "hover:bg-accent"
               }`}
             >
               Schedule
@@ -58,7 +58,7 @@ export const Navigation = () => {
             <Link
               to="/values"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/values" ? "bg-temple-700" : "hover:bg-temple-800"
+                location.pathname === "/values" ? "bg-accent" : "hover:bg-accent"
               }`}
             >
               Values
@@ -68,14 +68,14 @@ export const Navigation = () => {
             {!isAuthenticated ? (
               <Link
                 to="/auth"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-temple-800"
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent"
               >
                 Login
               </Link>
             ) : (
               <button
                 onClick={() => supabase.auth.signOut()}
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-temple-800"
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent"
               >
                 Logout
               </button>

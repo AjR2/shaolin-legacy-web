@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-temple-900 text-white mt-auto">
+    <footer className="bg-background text-foreground border-t border-border mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -26,7 +26,7 @@ export const Footer = () => {
             <p>Sunday: Closed</p>
           </div>
         </div>
-        <div className="border-t border-temple-700 mt-8 pt-8 text-center">
+        <div className="border-t border-border mt-8 pt-8 text-center">
           <p>&copy; {new Date().getFullYear()} Shaolin Temple Rockville. All rights reserved.</p>
         </div>
       </div>
