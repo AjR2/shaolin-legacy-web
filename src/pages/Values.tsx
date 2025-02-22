@@ -1,4 +1,5 @@
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
   CardContent,
@@ -29,7 +30,7 @@ const Values = () => {
 
   const goals = [
     {
-      title: "Improve students’ physical strength",
+      title: "Improve students' physical strength",
       description: "Practicing various Shaolin Kungfu movements helps to improve muscle coordination, flexibility, and strength, leading to improved health."
     },
     {
@@ -46,7 +47,7 @@ const Values = () => {
     },
     {
       title: "Building Confidence",
-      description: "It is very important for children to have confidence when handling issues in their daily lives, especially issues pertaining to school and family. Practicing Shaolin Kungfu unquestionably improves all practitioners’ stress and confidence levels."
+      description: "It is very important for children to have confidence when handling issues in their daily lives, especially issues pertaining to school and family. Practicing Shaolin Kungfu unquestionably improves all practitioners' stress and confidence levels."
     },
     {
       title: "Community",
@@ -56,52 +57,50 @@ const Values = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-temple-900 mb-8">Our Values</h1>
+      <h1 className="text-3xl font-bold text-temple-900 mb-8">Values & Guidelines</h1>
       
-      <div className="grid md:grid-cols-2 gap-8">
-        <Card className="bg-temple-50">
-          <CardHeader>
-            <CardTitle>Rules of the Training Hall</CardTitle>
-            <CardDescription>Guidelines for respectful and safe practice</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-3">
-              {rules.map((rule, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-temple-100 text-temple-800 rounded-full text-sm">
-                    {index + 1}
-                  </span>
-                  <span className="text-temple-800">{rule}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+      <Tabs defaultValue="rules" className="space-y-6">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="rules">Rules</TabsTrigger>
+          <TabsTrigger value="goals">Goals</TabsTrigger>
+        </TabsList>
 
-        <Card className="bg-temple-50">
-          <CardHeader>
-            <CardTitle>Goals of Kung Fu Training</CardTitle>
-            <CardDescription>What we strive to achieve through practice</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {goals.map((goal, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-white rounded-lg border border-temple-100"
-                >
-                  <h3 className="font-semibold text-temple-900 mb-1">
-                    {goal.title}
-                  </h3>
-                  <p className="text-temple-600 text-sm">
-                    {goal.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+        <TabsContent value="rules">
+          <Card className="bg-background">
+            <CardHeader>
+              <CardTitle>Training Hall Rules</CardTitle>
+              <CardDescription>Guidelines for respectful and safe practice</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {rules.map((rule, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="inline-flex items-center justify-center w-6 h-6 mr-2 bg-temple-100 text-temple-800 rounded-full text-sm">
+                      {index + 1}
+                    </span>
+                    <span className="text-temple-800">{rule}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="goals">
+          <div className="space-y-4">
+            {goals.map((goal, index) => (
+              <Card key={index} className="bg-background">
+                <CardHeader>
+                  <CardTitle>{goal.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-temple-600">{goal.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };

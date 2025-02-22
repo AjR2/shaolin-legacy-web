@@ -43,7 +43,7 @@ export const Navigation = () => {
                 location.pathname === "/videos" ? "bg-accent" : "hover:bg-accent"
               }`}
             >
-              Videos
+              Media
             </Link>
             <Link
               to="/schedule"
