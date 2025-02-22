@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -23,13 +22,11 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center">
-              {/* Note: Add logo.png to public folder and update src */}
               <img
-                src="/placeholder.svg"
+                src="/LOGO.png"
                 alt="Shaolin Temple Logo"
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
-              <span className="ml-2 text-lg font-semibold">少林寺</span>
             </Link>
             <Link
               to="/lineage"
