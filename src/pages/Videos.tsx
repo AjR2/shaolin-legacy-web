@@ -11,12 +11,12 @@ import {
 const Videos = () => {
   const tutorialVideos = [
     {
-      title: "Basic Stances & Footwork",
-      description: "Learn the fundamental stances of Shaolin Kung Fu",
-      videoUrl: "https://www.youtube.com/embed/example1",
-      instructor: "Master Chen Wei",
+      title: "Five Motions",
+      description: "Five Motions form",
+      videoUrl: "https://www.youtube.com/watch?v=yhlWmvwa40w&t=1s",
+      instructor: "Shi Yanruan",
       level: "Beginner",
-      duration: "15 minutes",
+      duration: "1 minute 34 seconds",
     },
     {
       title: "Introduction to Forms",
