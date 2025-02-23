@@ -1,3 +1,4 @@
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -6,12 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 const Videos = () => {
   const tutorialVideos = [
@@ -62,38 +57,14 @@ const Videos = () => {
     },
   ];
 
-  const theoryContent = [
-    {
-      title: "Chan Buddhism",
-      content: "Chan Buddhism is a school of Mahayana Buddhism that originated in China during the Tang dynasty. The Chan School was strongly influenced by Taoist philosophy, particularly Neo-Taoist thought, and developed as a distinct school of Chinese Buddhism.",
-    },
-    {
-      title: "Qi Cultivation",
-      content: "Qi cultivation is the practice of developing and nurturing one's vital energy through various methods including meditation, breathing exercises, and specific movement patterns. In Shaolin practice, qi cultivation is fundamental to developing both internal and external strength.",
-    },
-    {
-      title: "Five Elements Theory",
-      content: "The Five Elements Theory (Wu Xing) is a fundamental concept in Chinese philosophy and medicine that explains the relationship between different phenomena in nature. In Shaolin Kung Fu, it influences both combat strategy and health practices.",
-    },
-    {
-      title: "Three Treasures",
-      content: "The Three Treasures (San Bao) - Jing (essence), Qi (energy), and Shen (spirit) - are considered the fundamental energies of life in Chinese medicine and Shaolin practice. Cultivating and balancing these three aspects is essential for health and martial development.",
-    },
-    {
-      title: "Yin and Yang",
-      content: "The concept of Yin and Yang represents the duality and interconnectedness of opposing forces. In Shaolin practice, this principle guides both movement and strategy, teaching practitioners to blend hard and soft techniques effectively.",
-    }
-  ];
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-3xl font-bold text-temple-900 mb-8">Media Gallery</h1>
       
       <Tabs defaultValue="videos" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="videos">Videos</TabsTrigger>
           <TabsTrigger value="photos">Photos</TabsTrigger>
-          <TabsTrigger value="theory">Theory</TabsTrigger>
         </TabsList>
 
         <TabsContent value="videos">
@@ -150,29 +121,6 @@ const Videos = () => {
               </Card>
             ))}
           </div>
-        </TabsContent>
-
-        <TabsContent value="theory">
-          <Card>
-            <CardHeader>
-              <CardTitle>Shaolin Theory</CardTitle>
-              <CardDescription>Understanding the philosophical foundations of Shaolin practice</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Accordion type="single" collapsible className="space-y-2">
-                {theoryContent.map((item, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-lg font-semibold">
-                      {item.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {item.content}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
         </TabsContent>
       </Tabs>
     </div>

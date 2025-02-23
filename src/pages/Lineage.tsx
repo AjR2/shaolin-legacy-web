@@ -53,19 +53,41 @@ const Lineage = () => {
     { name: "Shi Yanruan", years: "1970—", description: "Master Yanruan was admitted as a young child to Hu Zhengsheng’s Kungfu academy. After receiving the training and guidance of Hu Zhengsheng, Yanruan was selected to enter the Shaolin Temple by Abbot Shi Yongxin. During his time at the Shaolin Temple, Shi Yanruan taught students from all over the world. He also accompanied Abbot Shi YongXin on performances all around the world, winning him an excellent reputation in the world of Shaolin Kungfu." },
   ];
 
+  const theoryContent = [
+    {
+      title: "Chan Buddhism",
+      content: "Chan Buddhism is a school of Mahayana Buddhism that originated in China during the Tang dynasty. The Chan School was strongly influenced by Taoist philosophy, particularly Neo-Taoist thought, and developed as a distinct school of Chinese Buddhism.",
+    },
+    {
+      title: "Qi Cultivation",
+      content: "Qi cultivation is the practice of developing and nurturing one's vital energy through various methods including meditation, breathing exercises, and specific movement patterns. In Shaolin practice, qi cultivation is fundamental to developing both internal and external strength.",
+    },
+    {
+      title: "Five Elements Theory",
+      content: "The Five Elements Theory (Wu Xing) is a fundamental concept in Chinese philosophy and medicine that explains the relationship between different phenomena in nature. In Shaolin Kung Fu, it influences both combat strategy and health practices.",
+    },
+    {
+      title: "Three Treasures",
+      content: "The Three Treasures (San Bao) - Jing (essence), Qi (energy), and Shen (spirit) - are considered the fundamental energies of life in Chinese medicine and Shaolin practice. Cultivating and balancing these three aspects is essential for health and martial development.",
+    },
+    {
+      title: "Yin and Yang",
+      content: "The concept of Yin and Yang represents the duality and interconnectedness of opposing forces. In Shaolin practice, this principle guides both movement and strategy, teaching practitioners to blend hard and soft techniques effectively.",
+    }
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-3xl font-bold text-temple-900 mb-8">Shaolin Legacy</h1>
       
       <Tabs defaultValue="lineage" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="lineage">Lineage</TabsTrigger>
           <TabsTrigger value="instructors">Instructors</TabsTrigger>
           <TabsTrigger value="theory">Theory</TabsTrigger>
-          <TabsTrigger value="history">History</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="lineage" className="space-y-4">
+        <TabsContent value="lineage">
           <Card>
             <CardHeader>
               <CardTitle>Our Shaolin Lineage</CardTitle>
@@ -122,22 +144,21 @@ const Lineage = () => {
           <Card>
             <CardHeader>
               <CardTitle>Shaolin Theory</CardTitle>
-              <CardDescription>Core principles and philosophical foundations</CardDescription>
+              <CardDescription>Understanding the philosophical foundations of Shaolin practice</CardDescription>
             </CardHeader>
             <CardContent>
-              <p>Content for theory section coming soon...</p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="history">
-          <Card>
-            <CardHeader>
-              <CardTitle>Shaolin History</CardTitle>
-              <CardDescription>The rich history of Shaolin Temple</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p>Content for history section coming soon...</p>
+              <Accordion type="single" collapsible className="space-y-2">
+                {theoryContent.map((item, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-lg font-semibold">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </CardContent>
           </Card>
         </TabsContent>
