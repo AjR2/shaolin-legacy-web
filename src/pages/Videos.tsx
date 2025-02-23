@@ -19,20 +19,22 @@ const Videos = () => {
       duration: "1 minute 34 seconds",
     },
     {
-      title: "Introduction to Forms",
+      title: "Lian Huan Fist",
       description: "Understanding the basics of Shaolin forms practice",
-      videoUrl: "https://www.youtube.com/embed/yhlWmvwa40w",
-      instructor: "Sifu Li Ming",
-      level: "Beginner",
-      duration: "20 minutes",
+
+      videoUrl: "https://www.youtube.com/watch?v=JPmH-rgOwLE&t=21s",
+      instructor: "Shi Yanruan",
+
     },
     {
-      title: "Advanced Form: Five Animals",
-      description: "Detailed breakdown of the Five Animals form",
-      videoUrl: "https://www.youtube.com/embed/yhlWmvwa40w",
-      instructor: "Master Chen Wei",
-      level: "Advanced",
-      duration: "30 minutes",
+
+      title: "Yin Shou Staff",
+      description: "Detailed breakdown of the Yin Shou staff form",
+      videoUrl: "https://www.youtube.com/watch?v=L43Inkt-oDQ&t=21s",
+      instructor: "Shi Yanruan",
+      level: "Beginner",
+      duration: "3 minutes 51 seconds",
+
     },
   ];
 

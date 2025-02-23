@@ -36,9 +36,12 @@ const Lineage = () => {
       description: "The Shaolin Temple was first built in 495 CE during the Northern Wei Dynasty. The Indian monk Batuo (跋陀) was the first abbot of Shaolin. Later, another Indian monk, Bodhidharma (达摩), came to Shaolin and introduced Chan Buddhism, which became the foundation of Shaolin culture."
     },
     {
+
       period: "Tang Dynasty (618-907)",
       description: "Shaolin monks helped the Tang emperor Li Shimin defeat Wang Shichong, leading to imperial patronage. This period marked the beginning of Shaolin's military reputation. The temple received land and permission to train warrior monks."
+
     },
+
     {
       period: "Song Dynasty (960-1279)",
       description: "Shaolin developed its unique combination of Chan Buddhism and martial arts. The temple became famous for its staff fighting techniques, and many generals studied at Shaolin."
@@ -55,6 +58,7 @@ const Lineage = () => {
       period: "Modern Era (1912-Present)",
       description: "After facing destruction during the Cultural Revolution, the temple was rebuilt and reopened in 1978. Today, it combines traditional practices with modern training methods, preserving ancient knowledge while adapting to contemporary needs."
     }
+
   ];
 
   const theoryContent = [
