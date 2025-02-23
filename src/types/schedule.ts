@@ -11,11 +11,6 @@ export interface Class {
 export interface Attendance {
   id: string;
   class_id: string;
-  attendance_dates?: string[];
-}
-
-export interface ClassAttendance {
-  id: string;
-  attendance_id: string;
-  attended_at: string;
+  attended: boolean;
+  attended_date?: string;
 }
