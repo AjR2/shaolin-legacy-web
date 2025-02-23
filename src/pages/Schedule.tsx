@@ -56,13 +56,31 @@ const Schedule = () => {
       if (!user) return;
       
       try {
-        const { data, error } = await supabase
+        // Get attendance records
+        const { data: attendanceData, error: attendanceError } = await supabase
           .from('attendance')
-          .select('*')
-          .eq('user_id', user.id);
+          .select('id, class_id');
 
-        if (error) throw error;
-        setUserAttendance(data || []);
+        if (attendanceError) throw attendanceError;
+
+        // Get class attendance dates for each attendance record
+        const attendanceWithDates = await Promise.all(
+          (attendanceData || []).map(async (attendance) => {
+            const { data: dates, error: datesError } = await supabase
+              .from('class_attendances')
+              .select('attended_at')
+              .eq('attendance_id', attendance.id);
+
+            if (datesError) throw datesError;
+
+            return {
+              ...attendance,
+              attendance_dates: dates?.map(d => new Date(d.attended_at).toISOString().split('T')[0]) || []
+            };
+          })
+        );
+
+        setUserAttendance(attendanceWithDates);
       } catch (error: any) {
         toast({
           title: "Error",
@@ -88,7 +106,17 @@ const Schedule = () => {
       const isRegistered = userAttendance.some(a => a.class_id === classId);
 
       if (isRegistered) {
-        // Unregister
+        // Get the attendance record
+        const attendance = userAttendance.find(a => a.class_id === classId);
+        if (!attendance) return;
+
+        // Delete all related class_attendances first
+        await supabase
+          .from('class_attendances')
+          .delete()
+          .eq('attendance_id', attendance.id);
+
+        // Then delete the attendance record
         const { error } = await supabase
           .from('attendance')
           .delete()
@@ -108,15 +136,14 @@ const Schedule = () => {
           .from('attendance')
           .insert([{ 
             user_id: user.id, 
-            class_id: classId, 
-            attended: false,
+            class_id: classId,
             status: 'confirmed'
           }])
           .select();
 
         if (error) throw error;
 
-        setUserAttendance(prev => [...prev, data[0]]);
+        setUserAttendance(prev => [...prev, { ...data[0], attendance_dates: [] }]);
         toast({
           title: "Success",
           description: "Successfully registered for class",
@@ -138,33 +165,40 @@ const Schedule = () => {
     if (!attendance) return;
 
     try {
-      const today = new Date().toISOString().split('T')[0];
-      const { error } = await supabase
-        .from('attendance')
-        .update({ 
-          attended: !attendance.attended,
-          attended_date: !attendance.attended ? today : null
-        })
-        .eq('id', attendance.id);
+      const today = new Date().toISOString();
+      
+      // Check if already attended today
+      const hasAttendedToday = attendance.attendance_dates?.includes(today.split('T')[0]);
+      
+      if (!hasAttendedToday) {
+        // Record new attendance
+        const { data, error } = await supabase
+          .from('class_attendances')
+          .insert([{
+            attendance_id: attendance.id,
+            attended_at: today
+          }])
+          .select();
 
-      if (error) throw error;
+        if (error) throw error;
 
-      setUserAttendance(prev =>
-        prev.map(a =>
-          a.id === attendance.id 
-            ? { 
-                ...a, 
-                attended: !a.attended,
-                attended_date: !a.attended ? today : null
-              } 
-            : a
-        )
-      );
+        // Update local state
+        setUserAttendance(prev =>
+          prev.map(a =>
+            a.id === attendance.id
+              ? {
+                  ...a,
+                  attendance_dates: [...(a.attendance_dates || []), today.split('T')[0]]
+                }
+              : a
+          )
+        );
 
-      toast({
-        title: "Success",
-        description: `Marked class as ${!attendance.attended ? 'attended' : 'not attended'}`,
-      });
+        toast({
+          title: "Success",
+          description: "Attendance recorded successfully",
+        });
+      }
     } catch (error: any) {
       toast({
         title: "Error",
