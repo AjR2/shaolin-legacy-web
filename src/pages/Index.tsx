@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -122,6 +121,47 @@ const Index = () => {
             </CardContent>
           </Card>
         ))}
+      </section>
+
+      {/* Featured Instructors */}
+      <section className="grid md:grid-cols-2 gap-6">
+        <Card className="overflow-hidden">
+          <CardHeader>
+            <CardTitle>Sifu Shi Yanruan</CardTitle>
+            <CardDescription>Head Instructor</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="aspect-w-16 aspect-h-9">
+              <img
+                src="/ShiYanruan.png"
+                alt="Sifu Shi Yanruan"
+                className="w-full h-64 object-cover rounded-md"
+              />
+            </div>
+            <p className="text-muted-foreground">
+              With over 30 years of experience in traditional Shaolin Kung Fu, Sifu Yanruan brings authentic teachings directly from the Shaolin Temple. He specializes in both internal and external martial arts practices.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="overflow-hidden">
+          <CardHeader>
+            <CardTitle>Sifu John Smith</CardTitle>
+            <CardDescription>Senior Instructor</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="aspect-w-16 aspect-h-9">
+              <img
+                src="/SifuWoodStance.png"
+                alt="Sifu John Smith"
+                className="w-full h-64 object-cover rounded-md"
+              />
+            </div>
+            <p className="text-muted-foreground">
+              With 20 years of dedicated practice, Sifu John specializes in teaching traditional Shaolin forms and applications. His focus on detail and patient instruction makes complex movements accessible to students of all levels.
+            </p>
+          </CardContent>
+        </Card>
       </section>
 
       {/* Contact Form */}
