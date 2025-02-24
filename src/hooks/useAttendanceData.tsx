@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import type { AttendanceData, AttendanceRecord } from "@/types/admin";
+import { User } from "@supabase/supabase-js";
 
 export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, userId: string | undefined) => {
   const [attendanceData, setAttendanceData] = useState<AttendanceData[]>([]);
@@ -45,16 +46,19 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         if (!attendanceRecords || !isMounted) return;
 
         // Fetch user emails in a separate query
-        const { data: users, error: usersError } = await supabase.auth.admin.listUsers();
+        const { data: usersData, error: usersError } = await supabase.auth.admin.listUsers();
         if (usersError) throw usersError;
 
-        // Create a properly typed Map of user IDs to emails
-        const userEmailMap = new Map<string, string>(
-          users.users.map(user => [user.id, user.email ?? 'Unknown'])
-        );
+        // Create a properly typed array of tuples
+        const userEmailEntries: [string, string][] = usersData.users.map((user: User) => [
+          user.id,
+          user.email ?? 'Unknown'
+        ]);
+
+        // Create the Map from the properly typed array
+        const userEmailMap = new Map<string, string>(userEmailEntries);
 
         const formattedData: AttendanceData[] = attendanceRecords.map(item => {
-          // Get email with type safety, defaulting to 'Unknown' if not found
           const userEmail = userEmailMap.get(item.user_id) ?? 'Unknown';
           
           return {
