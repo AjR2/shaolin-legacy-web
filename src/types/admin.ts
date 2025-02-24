@@ -15,6 +15,7 @@ export interface AttendanceRecord {
   status: string;
   attended: boolean;
   attended_date: string | null;
+  user_email: string;
   classes: {
     name: string;
     day: string;

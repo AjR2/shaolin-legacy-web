@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import type { AttendanceData, AttendanceRecord, AdminUser } from "@/types/admin";
+import type { AttendanceData, AttendanceRecord } from "@/types/admin";
 
 export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, userId: string | undefined) => {
   const [attendanceData, setAttendanceData] = useState<AttendanceData[]>([]);
@@ -32,6 +32,7 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
             status,
             attended,
             attended_date,
+            user_email:auth.users!attendance_user_id_fkey(email),
             classes (
               name,
               day,
@@ -42,17 +43,9 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         if (error) throw error;
         if (!attendanceRecords || !isMounted) return;
 
-        const { data: { users }, error: userError } = await supabase.auth.admin.listUsers() as { 
-          data: { users: AdminUser[] }, 
-          error: Error | null 
-        };
-        
-        if (userError) throw userError;
-        if (!isMounted) return;
-
         const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
-          user_email: users.find(u => u.id === item.user_id)?.email || 'Unknown',
+          user_email: item.user_email || 'Unknown',
           class_name: item.classes.name,
           day: item.classes.day,
           time: item.classes.time,
