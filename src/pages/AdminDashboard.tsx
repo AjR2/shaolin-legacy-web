@@ -51,26 +51,48 @@ const AdminDashboard = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    console.log('AdminDashboard: Current state:', {
+      user: user?.id,
+      isAdmin,
+      authLoading,
+      adminCheckLoading,
+    });
+
     let isMounted = true;
 
-    // Only redirect if we're not loading and the user is not authenticated or not admin
+    // Wait for both auth and admin check to complete before making any decisions
     if (!authLoading && !adminCheckLoading) {
       if (!user) {
-        console.log('Redirecting: Not authenticated');
+        console.log('AdminDashboard: Redirecting - Not authenticated');
         navigate('/auth');
         return;
       }
+      
       if (!isAdmin) {
-        console.log('Redirecting: Not admin');
+        console.log('AdminDashboard: No admin access. User:', user.id);
+        toast({
+          title: "Access Denied",
+          description: "You don't have admin privileges",
+          variant: "destructive",
+        });
         navigate('/');
         return;
       }
     }
 
     const fetchAttendanceData = async () => {
-      if (!isAdmin || adminCheckLoading || !user || !isMounted) return;
+      if (!isAdmin || adminCheckLoading || !user || !isMounted) {
+        console.log('AdminDashboard: Skipping fetch, conditions not met:', {
+          isAdmin,
+          adminCheckLoading,
+          hasUser: !!user,
+          isMounted
+        });
+        return;
+      }
 
       try {
+        console.log('AdminDashboard: Fetching attendance data...');
         const { data: attendanceRecords, error } = await supabase
           .from('attendance')
           .select(`
@@ -107,6 +129,8 @@ const AdminDashboard = () => {
           attended_date: item.attended_date,
           status: item.status,
         }));
+
+        console.log('AdminDashboard: Data fetched successfully:', formattedData.length);
 
         if (isMounted) {
           setAttendanceData(formattedData);

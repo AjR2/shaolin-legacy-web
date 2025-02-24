@@ -13,6 +13,7 @@ export const useIsAdmin = (userId: string | undefined) => {
 
     const checkAdminStatus = async () => {
       if (!userId) {
+        console.log('useIsAdmin: No userId provided');
         if (isMounted) {
           setLoading(false);
           setIsAdmin(false);
@@ -20,10 +21,12 @@ export const useIsAdmin = (userId: string | undefined) => {
         return;
       }
 
+      console.log('useIsAdmin: Checking admin status for userId:', userId);
+
       try {
         const { data, error } = await supabase
           .from('admin_users')
-          .select('*')
+          .select('user_id')
           .eq('user_id', userId)
           .maybeSingle();
 
@@ -32,8 +35,11 @@ export const useIsAdmin = (userId: string | undefined) => {
           throw error;
         }
         
+        const adminStatus = !!data;
+        console.log('useIsAdmin: Admin status result:', { data, adminStatus });
+        
         if (isMounted) {
-          setIsAdmin(!!data);
+          setIsAdmin(adminStatus);
           setLoading(false);
         }
       } catch (error: any) {
@@ -52,7 +58,6 @@ export const useIsAdmin = (userId: string | undefined) => {
 
     checkAdminStatus();
     
-    // Cleanup function to prevent state updates after unmount
     return () => {
       isMounted = false;
     };
