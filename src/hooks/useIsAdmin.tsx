@@ -39,8 +39,13 @@ export const useIsAdmin = (userId: string | undefined) => {
         console.log('useIsAdmin: Admin status result:', { data, adminStatus });
         
         if (isMounted) {
+          // Ensure state updates happen in the correct order
           setIsAdmin(adminStatus);
-          setLoading(false);
+          setTimeout(() => {
+            if (isMounted) {
+              setLoading(false);
+            }
+          }, 100);
         }
       } catch (error: any) {
         console.error('Admin status check failed:', error);
@@ -56,6 +61,7 @@ export const useIsAdmin = (userId: string | undefined) => {
       }
     };
 
+    setLoading(true); // Ensure loading is true when checking starts
     checkAdminStatus();
     
     return () => {

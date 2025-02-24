@@ -68,16 +68,21 @@ const AdminDashboard = () => {
         return;
       }
       
-      if (!isAdmin) {
-        console.log('AdminDashboard: No admin access. User:', user.id);
-        toast({
-          title: "Access Denied",
-          description: "You don't have admin privileges",
-          variant: "destructive",
-        });
-        navigate('/');
-        return;
-      }
+      // Add a small delay to ensure admin status is properly set
+      setTimeout(() => {
+        if (!isMounted) return;
+        
+        if (!isAdmin) {
+          console.log('AdminDashboard: No admin access. User:', user.id);
+          toast({
+            title: "Access Denied",
+            description: "You don't have admin privileges",
+            variant: "destructive",
+          });
+          navigate('/');
+          return;
+        }
+      }, 200);
     }
 
     const fetchAttendanceData = async () => {
@@ -149,7 +154,7 @@ const AdminDashboard = () => {
       }
     };
 
-    if (isAdmin && user && !authLoading) {
+    if (isAdmin && user && !authLoading && !adminCheckLoading) {
       fetchAttendanceData();
     }
 
