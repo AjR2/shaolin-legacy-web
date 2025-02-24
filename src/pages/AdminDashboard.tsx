@@ -25,6 +25,23 @@ interface AttendanceData {
   status: string;
 }
 
+interface AttendanceRecord {
+  user_id: string;
+  status: string;
+  attended: boolean;
+  attended_date: string | null;
+  classes: {
+    name: string;
+    day: string;
+    time: string;
+  };
+}
+
+interface AdminUser {
+  id: string;
+  email: string;
+}
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -38,7 +55,7 @@ const AdminDashboard = () => {
       if (!isAdmin || adminCheckLoading) return;
 
       try {
-        const { data, error } = await supabase
+        const { data: attendanceRecords, error } = await supabase
           .from('attendance')
           .select(`
             user_id,
@@ -50,19 +67,23 @@ const AdminDashboard = () => {
               day,
               time
             )
-          `);
+          `) as { data: AttendanceRecord[] | null, error: Error | null };
 
         if (error) throw error;
+        if (!attendanceRecords) return;
 
         // Get user emails
-        const userIds = [...new Set(data.map(item => item.user_id))];
-        const { data: userData, error: userError } = await supabase.auth.admin.listUsers();
+        const userIds = [...new Set(attendanceRecords.map(item => item.user_id))];
+        const { data: { users }, error: userError } = await supabase.auth.admin.listUsers() as { 
+          data: { users: AdminUser[] }, 
+          error: Error | null 
+        };
         
         if (userError) throw userError;
 
-        const formattedData: AttendanceData[] = data.map(item => ({
+        const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
-          user_email: userData.users.find(u => u.id === item.user_id)?.email || 'Unknown',
+          user_email: users.find(u => u.id === item.user_id)?.email || 'Unknown',
           class_name: item.classes.name,
           day: item.classes.day,
           time: item.classes.time,
