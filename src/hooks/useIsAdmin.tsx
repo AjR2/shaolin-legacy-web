@@ -18,18 +18,24 @@ export const useIsAdmin = (userId: string | undefined) => {
       try {
         const { data, error } = await supabase
           .from('admin_users')
-          .select('id')
+          .select('*')
           .eq('user_id', userId)
           .single();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Admin check error:', error);
+          throw error;
+        }
+        
         setIsAdmin(!!data);
       } catch (error: any) {
+        console.error('Admin status check failed:', error);
         toast({
           title: "Error",
           description: "Failed to check admin status",
           variant: "destructive",
         });
+        setIsAdmin(false);
       } finally {
         setLoading(false);
       }

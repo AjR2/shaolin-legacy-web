@@ -51,8 +51,15 @@ const AdminDashboard = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    // If we're not loading and either there's no user or user is not admin, redirect
+    if (!adminCheckLoading && (!user || !isAdmin)) {
+      console.log('Redirecting: Not admin or not authenticated', { user, isAdmin });
+      navigate('/');
+      return;
+    }
+
     const fetchAttendanceData = async () => {
-      if (!isAdmin || adminCheckLoading) return;
+      if (!isAdmin || adminCheckLoading || !user) return;
 
       try {
         const { data: attendanceRecords, error } = await supabase
@@ -73,7 +80,6 @@ const AdminDashboard = () => {
         if (!attendanceRecords) return;
 
         // Get user emails
-        const userIds = [...new Set(attendanceRecords.map(item => item.user_id))];
         const { data: { users }, error: userError } = await supabase.auth.admin.listUsers() as { 
           data: { users: AdminUser[] }, 
           error: Error | null 
@@ -94,6 +100,7 @@ const AdminDashboard = () => {
 
         setAttendanceData(formattedData);
       } catch (error: any) {
+        console.error('Failed to fetch attendance data:', error);
         toast({
           title: "Error",
           description: error.message,
@@ -104,14 +111,10 @@ const AdminDashboard = () => {
       }
     };
 
-    fetchAttendanceData();
-  }, [isAdmin, adminCheckLoading, toast]);
-
-  useEffect(() => {
-    if (!adminCheckLoading && !isAdmin) {
-      navigate('/');
+    if (isAdmin && user) {
+      fetchAttendanceData();
     }
-  }, [isAdmin, adminCheckLoading, navigate]);
+  }, [isAdmin, adminCheckLoading, user, navigate, toast]);
 
   if (loading || adminCheckLoading) {
     return (
@@ -119,6 +122,10 @@ const AdminDashboard = () => {
         <p>Loading...</p>
       </div>
     );
+  }
+
+  if (!isAdmin) {
+    return null; // Return null as we're redirecting anyway
   }
 
   return (
