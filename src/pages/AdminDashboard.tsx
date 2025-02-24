@@ -44,16 +44,16 @@ interface AdminUser {
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { isAdmin, loading: adminCheckLoading } = useIsAdmin(user?.id);
   const [attendanceData, setAttendanceData] = useState<AttendanceData[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
 
   useEffect(() => {
-    // If we're not loading and either there's no user or user is not admin, redirect
-    if (!adminCheckLoading && (!user || !isAdmin)) {
-      console.log('Redirecting: Not admin or not authenticated', { user, isAdmin });
+    // Only redirect if we're not loading and the user is not authenticated or not admin
+    if (!authLoading && !adminCheckLoading && (!user || !isAdmin)) {
+      console.log('Redirecting: Not admin or not authenticated', { user, isAdmin, authLoading, adminCheckLoading });
       navigate('/');
       return;
     }
@@ -111,12 +111,13 @@ const AdminDashboard = () => {
       }
     };
 
-    if (isAdmin && user) {
+    if (isAdmin && user && !authLoading) {
       fetchAttendanceData();
     }
-  }, [isAdmin, adminCheckLoading, user, navigate, toast]);
+  }, [isAdmin, adminCheckLoading, user, navigate, toast, authLoading]);
 
-  if (loading || adminCheckLoading) {
+  // Show loading state while checking auth or admin status
+  if (loading || adminCheckLoading || authLoading) {
     return (
       <div className="container mx-auto px-4 py-8">
         <p>Loading...</p>
@@ -124,7 +125,7 @@ const AdminDashboard = () => {
     );
   }
 
-  if (!isAdmin) {
+  if (!isAdmin || !user) {
     return null; // Return null as we're redirecting anyway
   }
 
