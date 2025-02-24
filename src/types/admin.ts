@@ -11,6 +11,7 @@ export interface AttendanceData {
 }
 
 export interface AttendanceRecord {
+  id: string;
   user_id: string;
   status: string;
   attended: boolean;
@@ -20,9 +21,6 @@ export interface AttendanceRecord {
     day: string;
     time: string;
   };
-  user: {
-    email: string;
-  } | null;
 }
 
 export interface AdminUser {

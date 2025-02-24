@@ -28,26 +28,31 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         const { data: attendanceRecords, error } = await supabase
           .from('attendance')
           .select(`
+            id,
             user_id,
             status,
             attended,
             attended_date,
-            classes (
+            classes!inner (
               name,
               day,
               time
-            ),
-            user:user_id (
-              email
             )
-          `) as { data: AttendanceRecord[] | null, error: Error | null };
+          `)
+          .returns<AttendanceRecord[]>();
 
         if (error) throw error;
         if (!attendanceRecords || !isMounted) return;
 
+        // Fetch user emails in a separate query
+        const { data: users, error: usersError } = await supabase.auth.admin.listUsers();
+        if (usersError) throw usersError;
+
+        const userEmailMap = new Map(users.users.map(user => [user.id, user.email]));
+
         const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
-          user_email: item.user?.email || 'Unknown',
+          user_email: userEmailMap.get(item.user_id) || 'Unknown',
           class_name: item.classes.name,
           day: item.classes.day,
           time: item.classes.time,
@@ -67,7 +72,7 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         if (isMounted) {
           toast({
             title: "Error",
-            description: error.message,
+            description: error.message || "Failed to fetch attendance data",
             variant: "destructive",
           });
           setLoading(false);
@@ -75,8 +80,11 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
       }
     };
 
+    setLoading(true);
     if (isAdmin && userId && !adminCheckLoading) {
       fetchAttendanceData();
+    } else {
+      setLoading(false);
     }
 
     return () => {
