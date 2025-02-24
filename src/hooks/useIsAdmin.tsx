@@ -20,14 +20,14 @@ export const useIsAdmin = (userId: string | undefined) => {
           .from('admin_users')
           .select('*')
           .eq('user_id', userId)
-          .single();
+          .maybeSingle(); // Use maybeSingle instead of single to handle no rows gracefully
 
         if (error) {
           console.error('Admin check error:', error);
           throw error;
         }
         
-        setIsAdmin(!!data);
+        setIsAdmin(!!data); // Will be false if data is null (no rows found)
       } catch (error: any) {
         console.error('Admin status check failed:', error);
         toast({
