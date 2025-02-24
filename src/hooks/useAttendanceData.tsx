@@ -48,18 +48,26 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         const { data: users, error: usersError } = await supabase.auth.admin.listUsers();
         if (usersError) throw usersError;
 
-        const userEmailMap = new Map(users.users.map(user => [user.id, user.email]));
+        // Create a properly typed Map of user IDs to emails
+        const userEmailMap = new Map<string, string>(
+          users.users.map(user => [user.id, user.email ?? 'Unknown'])
+        );
 
-        const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
-          user_id: item.user_id,
-          user_email: userEmailMap.get(item.user_id) || 'Unknown',
-          class_name: item.classes.name,
-          day: item.classes.day,
-          time: item.classes.time,
-          attended: item.attended,
-          attended_date: item.attended_date,
-          status: item.status,
-        }));
+        const formattedData: AttendanceData[] = attendanceRecords.map(item => {
+          // Get email with type safety, defaulting to 'Unknown' if not found
+          const userEmail = userEmailMap.get(item.user_id) ?? 'Unknown';
+          
+          return {
+            user_id: item.user_id,
+            user_email: userEmail,
+            class_name: item.classes.name,
+            day: item.classes.day,
+            time: item.classes.time,
+            attended: item.attended,
+            attended_date: item.attended_date,
+            status: item.status,
+          };
+        });
 
         console.log('useAttendanceData: Data fetched successfully:', formattedData.length);
 
