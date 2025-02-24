@@ -35,7 +35,6 @@ const Schedule = () => {
 
         if (error) throw error;
 
-        // Group classes by day
         const grouped = (classes || []).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
           if (!acc[curr.day]) acc[curr.day] = [];
           acc[curr.day].push(curr);
@@ -139,13 +138,16 @@ const Schedule = () => {
 
     try {
       const today = new Date().toISOString().split('T')[0];
+      
+      // Update the attendance record
       const { error } = await supabase
         .from('attendance')
         .update({ 
           attended: !attendance.attended,
           attended_date: !attendance.attended ? today : null
         })
-        .eq('id', attendance.id);
+        .eq('id', attendance.id)
+        .select();
 
       if (error) throw error;
 
