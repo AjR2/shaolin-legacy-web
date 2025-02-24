@@ -37,7 +37,7 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
               day,
               time
             ),
-            profiles:user_id (
+            user:user_id (
               email
             )
           `) as { data: AttendanceRecord[] | null, error: Error | null };
@@ -47,7 +47,7 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
 
         const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
-          user_email: item.profiles?.email || 'Unknown',
+          user_email: item.user?.email || 'Unknown',
           class_name: item.classes.name,
           day: item.classes.day,
           time: item.classes.time,
