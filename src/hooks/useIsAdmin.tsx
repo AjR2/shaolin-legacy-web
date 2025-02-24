@@ -9,9 +9,14 @@ export const useIsAdmin = (userId: string | undefined) => {
   const { toast } = useToast();
 
   useEffect(() => {
+    let isMounted = true;
+
     const checkAdminStatus = async () => {
       if (!userId) {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+          setIsAdmin(false);
+        }
         return;
       }
 
@@ -20,28 +25,37 @@ export const useIsAdmin = (userId: string | undefined) => {
           .from('admin_users')
           .select('*')
           .eq('user_id', userId)
-          .maybeSingle(); // Use maybeSingle instead of single to handle no rows gracefully
+          .maybeSingle();
 
         if (error) {
           console.error('Admin check error:', error);
           throw error;
         }
         
-        setIsAdmin(!!data); // Will be false if data is null (no rows found)
+        if (isMounted) {
+          setIsAdmin(!!data);
+          setLoading(false);
+        }
       } catch (error: any) {
         console.error('Admin status check failed:', error);
-        toast({
-          title: "Error",
-          description: "Failed to check admin status",
-          variant: "destructive",
-        });
-        setIsAdmin(false);
-      } finally {
-        setLoading(false);
+        if (isMounted) {
+          toast({
+            title: "Error",
+            description: "Failed to check admin status",
+            variant: "destructive",
+          });
+          setIsAdmin(false);
+          setLoading(false);
+        }
       }
     };
 
     checkAdminStatus();
+    
+    // Cleanup function to prevent state updates after unmount
+    return () => {
+      isMounted = false;
+    };
   }, [userId, toast]);
 
   return { isAdmin, loading };

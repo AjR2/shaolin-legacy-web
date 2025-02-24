@@ -51,15 +51,24 @@ const AdminDashboard = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    let isMounted = true;
+
     // Only redirect if we're not loading and the user is not authenticated or not admin
-    if (!authLoading && !adminCheckLoading && (!user || !isAdmin)) {
-      console.log('Redirecting: Not admin or not authenticated', { user, isAdmin, authLoading, adminCheckLoading });
-      navigate('/');
-      return;
+    if (!authLoading && !adminCheckLoading) {
+      if (!user) {
+        console.log('Redirecting: Not authenticated');
+        navigate('/auth');
+        return;
+      }
+      if (!isAdmin) {
+        console.log('Redirecting: Not admin');
+        navigate('/');
+        return;
+      }
     }
 
     const fetchAttendanceData = async () => {
-      if (!isAdmin || adminCheckLoading || !user) return;
+      if (!isAdmin || adminCheckLoading || !user || !isMounted) return;
 
       try {
         const { data: attendanceRecords, error } = await supabase
@@ -77,7 +86,7 @@ const AdminDashboard = () => {
           `) as { data: AttendanceRecord[] | null, error: Error | null };
 
         if (error) throw error;
-        if (!attendanceRecords) return;
+        if (!attendanceRecords || !isMounted) return;
 
         // Get user emails
         const { data: { users }, error: userError } = await supabase.auth.admin.listUsers() as { 
@@ -86,6 +95,7 @@ const AdminDashboard = () => {
         };
         
         if (userError) throw userError;
+        if (!isMounted) return;
 
         const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
@@ -98,22 +108,30 @@ const AdminDashboard = () => {
           status: item.status,
         }));
 
-        setAttendanceData(formattedData);
+        if (isMounted) {
+          setAttendanceData(formattedData);
+          setLoading(false);
+        }
       } catch (error: any) {
         console.error('Failed to fetch attendance data:', error);
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } finally {
-        setLoading(false);
+        if (isMounted) {
+          toast({
+            title: "Error",
+            description: error.message,
+            variant: "destructive",
+          });
+          setLoading(false);
+        }
       }
     };
 
     if (isAdmin && user && !authLoading) {
       fetchAttendanceData();
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [isAdmin, adminCheckLoading, user, navigate, toast, authLoading]);
 
   // Show loading state while checking auth or admin status
@@ -126,7 +144,7 @@ const AdminDashboard = () => {
   }
 
   if (!isAdmin || !user) {
-    return null; // Return null as we're redirecting anyway
+    return null;
   }
 
   return (
