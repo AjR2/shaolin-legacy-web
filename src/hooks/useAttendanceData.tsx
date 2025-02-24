@@ -28,23 +28,26 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         const { data: attendanceRecords, error } = await supabase
           .from('attendance')
           .select(`
-            *,
-            classes!inner (
+            user_id,
+            status,
+            attended,
+            attended_date,
+            classes (
               name,
               day,
               time
             ),
-            auth:user_id (
+            profiles:user_id (
               email
             )
-          `) as { data: (AttendanceRecord & { auth: { email: string } })[] | null, error: Error | null };
+          `) as { data: AttendanceRecord[] | null, error: Error | null };
 
         if (error) throw error;
         if (!attendanceRecords || !isMounted) return;
 
         const formattedData: AttendanceData[] = attendanceRecords.map(item => ({
           user_id: item.user_id,
-          user_email: item.auth?.email || 'Unknown',
+          user_email: item.profiles?.email || 'Unknown',
           class_name: item.classes.name,
           day: item.classes.day,
           time: item.classes.time,
