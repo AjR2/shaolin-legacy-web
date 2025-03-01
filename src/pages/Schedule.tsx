@@ -1,13 +1,10 @@
 
-import { useAuth } from "@/hooks/useAuth";
 import { useSchedule } from "@/hooks/useSchedule";
-import { useAttendance } from "@/hooks/useAttendance";
 import { DaySchedule } from "@/components/schedule/DaySchedule";
 
 const Schedule = () => {
-  const { user } = useAuth();
   const { weeklySchedule, isLoading } = useSchedule();
-  const { userAttendance, handleRegistration, handleAttendance } = useAttendance(user);
+  const userAttendance = []; // Empty attendance since we removed login
 
   if (isLoading) {
     return (
@@ -28,8 +25,8 @@ const Schedule = () => {
             day={day}
             classes={classes}
             userAttendance={userAttendance}
-            onRegister={handleRegistration}
-            onAttendance={handleAttendance}
+            onRegister={() => {}}
+            onAttendance={() => {}}
           />
         ))}
       </div>

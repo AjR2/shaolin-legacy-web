@@ -20,8 +20,6 @@ export const DaySchedule = ({
   day,
   classes,
   userAttendance,
-  onRegister,
-  onAttendance,
 }: DayScheduleProps) => {
   const isRegistered = (classId: string) => {
     return userAttendance.some(a => a.class_id === classId);
@@ -43,8 +41,8 @@ export const DaySchedule = ({
             classItem={classItem}
             attendance={getAttendanceRecord(classItem.id)}
             isRegistered={isRegistered(classItem.id)}
-            onRegister={onRegister}
-            onAttendance={onAttendance}
+            onRegister={() => {}}
+            onAttendance={() => {}}
           />
         ))}
       </CardContent>

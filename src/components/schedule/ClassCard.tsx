@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Class, Attendance } from "@/types/schedule";
 
 interface ClassCardProps {
@@ -12,10 +11,6 @@ interface ClassCardProps {
 
 export const ClassCard = ({
   classItem,
-  attendance,
-  isRegistered,
-  onRegister,
-  onAttendance,
 }: ClassCardProps) => {
   return (
     <div className="p-4 bg-white rounded-lg border border-temple-100">
@@ -28,24 +23,6 @@ export const ClassCard = ({
         <span className="inline-block px-2 py-1 bg-temple-50 text-temple-800 text-xs rounded">
           {classItem.level}
         </span>
-      </div>
-      <div className="space-y-2 mt-3">
-        <Button
-          className="w-full"
-          variant={isRegistered ? "destructive" : "default"}
-          onClick={() => onRegister(classItem.id)}
-        >
-          {isRegistered ? "Cancel Registration" : "Register"}
-        </Button>
-        {attendance && (
-          <Button
-            className="w-full"
-            variant={attendance.attended ? "secondary" : "outline"}
-            onClick={() => onAttendance(classItem.id)}
-          >
-            {attendance.attended ? "✓ Attended" : "Mark as Attended"}
-          </Button>
-        )}
       </div>
     </div>
   );

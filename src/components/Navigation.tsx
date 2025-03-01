@@ -1,21 +1,8 @@
 
-import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 
 export const Navigation = () => {
   const location = useLocation();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-      setIsAuthenticated(event === 'SIGNED_IN');
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, []);
 
   return (
     <nav className="bg-background text-foreground border-b border-border">
@@ -61,23 +48,6 @@ export const Navigation = () => {
             >
               Values
             </Link>
-          </div>
-          <div>
-            {!isAuthenticated ? (
-              <Link
-                to="/auth"
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent"
-              >
-                Login
-              </Link>
-            ) : (
-              <button
-                onClick={() => supabase.auth.signOut()}
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent"
-              >
-                Logout
-              </button>
-            )}
           </div>
         </div>
       </div>

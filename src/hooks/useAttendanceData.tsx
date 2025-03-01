@@ -49,14 +49,10 @@ export const useAttendanceData = (isAdmin: boolean, adminCheckLoading: boolean, 
         const { data: usersData, error: usersError } = await supabase.auth.admin.listUsers();
         if (usersError) throw usersError;
 
-        // Create a properly typed array of tuples
-        const userEmailEntries: [string, string][] = usersData.users.map((user: User) => [
-          user.id,
-          user.email ?? 'Unknown'
-        ]);
-
-        // Create the Map from the properly typed array
-        const userEmailMap = new Map<string, string>(userEmailEntries);
+        // Create a Map directly with type assertions
+        const userEmailMap = new Map(
+          usersData.users.map((user: User) => [user.id, user.email ?? 'Unknown'] as [string, string])
+        );
 
         const formattedData: AttendanceData[] = attendanceRecords.map(item => {
           const userEmail = userEmailMap.get(item.user_id) ?? 'Unknown';
