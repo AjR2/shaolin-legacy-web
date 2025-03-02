@@ -19,7 +19,7 @@ export function useSchedule() {
         if (error) throw error;
 
         // Group classes by day
-        const groupedByDay = (data as Class[]).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
+        const groupedByDay = (data as unknown as Class[]).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
           // Initialize the array for this day if it doesn't exist
           if (!acc[curr.day]) {
             acc[curr.day] = [];

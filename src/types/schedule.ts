@@ -4,7 +4,7 @@ export interface Class {
   name: string;
   time: string;
   day: string;
-  level: string;
+  level?: string; // Make level optional since it's not in the database
   instructor: string;
 }
 
