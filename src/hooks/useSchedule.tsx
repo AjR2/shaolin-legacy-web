@@ -1,43 +1,44 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
 import { Class } from "@/types/schedule";
 
-export const useSchedule = () => {
-  const { toast } = useToast();
-  const [weeklySchedule, setWeeklySchedule] = useState<{ [key: string]: Class[] }>({});
-  const [isLoading, setIsLoading] = useState(true);
+export function useSchedule() {
+  const [schedule, setSchedule] = useState<{ [key: string]: Class[] }>({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const fetchClasses = async () => {
+    const fetchScheduleData = async () => {
       try {
-        const { data: classes, error } = await supabase
-          .from('classes')
-          .select('*');
+        setLoading(true);
+        const { data, error } = await supabase
+          .from("classes")
+          .select("*");
 
         if (error) throw error;
 
-        const grouped = (classes || []).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
-          if (!acc[curr.day]) acc[curr.day] = [];
+        // Group classes by day
+        const groupedByDay = (data as Class[]).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
+          // Initialize the array for this day if it doesn't exist
+          if (!acc[curr.day]) {
+            acc[curr.day] = [];
+          }
+          // Add the current class to the array for this day
           acc[curr.day].push(curr);
           return acc;
         }, {});
 
-        setWeeklySchedule(grouped);
-      } catch (error: any) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
+        setSchedule(groupedByDay);
+      } catch (err) {
+        setError(err as Error);
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     };
 
-    fetchClasses();
-  }, [toast]);
+    fetchScheduleData();
+  }, []);
 
-  return { weeklySchedule, isLoading };
-};
+  return { schedule, loading, error };
+}

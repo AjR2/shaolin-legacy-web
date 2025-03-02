@@ -81,32 +81,51 @@ const Lineage = () => {
   const historyData = [
     {
       period: "495-616 CE: Early Development",
-      description: "Shaolin Kungfu refers to the traditional cultural system that has formed in the particular Buddhist cultural environment in Shaolin Temple of Songshan Mountain over long history. It is based on a belief in the supernatural power of Buddhism and fully reflects the wisdom of Chan Buddhism. The martial arts practiced by monks in the Shaolin Temple are its major form of expression. "
+      description: [
+        "Shaolin Kungfu refers to the traditional cultural system that has formed in the particular Buddhist cultural environment in Shaolin Temple of Songshan Mountain over long history. It is based on a belief in the supernatural power of Buddhism and fully reflects the wisdom of Chan Buddhism.",
+        "The martial arts practiced by monks in the Shaolin Temple are its major form of expression. During these early years, the foundation of what would become Shaolin Kung Fu was established as monks developed exercises to maintain their health during long periods of meditation."
+      ]
     },
     {
-
       period: "Tang Dynasty (618-907)",
-      description: "Shaolin monks helped the Tang emperor Li Shimin defeat Wang Shichong, leading to imperial patronage. This period marked the beginning of Shaolin's military reputation. The temple received land and permission to train warrior monks."
-
+      description: [
+        "Shaolin monks helped the Tang emperor Li Shimin defeat Wang Shichong, leading to imperial patronage. This period marked the beginning of Shaolin's military reputation.",
+        "The temple received land and permission to train warrior monks. As a result of their service to the emperor, the Shaolin Temple was granted 600 acres of land and official recognition as a military force.",
+        "This period is considered pivotal in Shaolin history, as it transformed the temple from a purely religious institution to one that combined spiritual practice with martial prowess."
+      ]
     },
-
     {
       period: "Song Dynasty (960-1279)",
-      description: "Shaolin developed its unique combination of Chan Buddhism and martial arts. The temple became famous for its staff fighting techniques, and many generals studied at Shaolin."
+      description: [
+        "Shaolin developed its unique combination of Chan Buddhism and martial arts. The temple became famous for its staff fighting techniques, and many generals studied at Shaolin.",
+        "During this period, the monks refined and systematized their combat skills, integrating them with Buddhist philosophy. The Shaolin staff techniques became particularly renowned throughout China.",
+        "Historical records indicate that the military aspects of Shaolin training became more structured and formalized during the Song Dynasty, with specific training methods being documented for the first time."
+      ]
     },
     {
       period: "Ming Dynasty (1368-1644)",
-      description: "This was the golden age of Shaolin Kung Fu. The temple's fighting techniques were systematized, and many of the forms still practiced today were developed during this period."
+      description: [
+        "This was the golden age of Shaolin Kung Fu. The temple's fighting techniques were systematized, and many of the forms still practiced today were developed during this period.",
+        "The Ming Dynasty saw the greatest development and expansion of Shaolin martial arts. The number of monks training in combat skills reached its peak, and comprehensive training manuals were created.",
+        "During this time, Shaolin combat methods were organized into distinct styles and systems, establishing a standardized curriculum that would influence Chinese martial arts for centuries to come."
+      ]
     },
     {
       period: "Qing Dynasty (1644-1911)",
-      description: "The temple faced persecution as the Qing government suspected it of Ming loyalist activities. Many techniques were preserved in secret during this time."
+      description: [
+        "The temple faced persecution as the Qing government suspected it of Ming loyalist activities. Many techniques were preserved in secret during this time.",
+        "The Manchu rulers were wary of Han Chinese cultural institutions, particularly those with military capabilities like the Shaolin Temple. There were periods of outright suppression and temple destruction.",
+        "Despite these challenges, Shaolin masters continued to train in secret, often disguising their martial arts as dance or theater performances to avoid persecution. This period of adversity led to the spread of Shaolin techniques beyond the temple walls as masters sought refuge in other parts of China."
+      ]
     },
     {
       period: "Modern Era (1912-Present)",
-      description: "After facing destruction during the Cultural Revolution, the temple was rebuilt and reopened in 1978. Today, it combines traditional practices with modern training methods, preserving ancient knowledge while adapting to contemporary needs."
+      description: [
+        "After facing destruction during the Cultural Revolution, the temple was rebuilt and reopened in 1978. Today, it combines traditional practices with modern training methods, preserving ancient knowledge while adapting to contemporary needs.",
+        "The second half of the 20th century saw a revival of interest in Shaolin Kung Fu, both within China and internationally. The Chinese government eventually recognized the cultural significance of Shaolin and supported its restoration.",
+        "In recent decades, Shaolin has become a global cultural phenomenon, with demonstration teams touring the world and a surge of interest in Shaolin training from practitioners worldwide. The temple now balances its role as a Buddhist monastery, martial arts center, and tourist destination."
+      ]
     }
-
   ];
 
   const theoryContent = [
@@ -179,8 +198,10 @@ const Lineage = () => {
                     <AccordionTrigger className="text-lg font-semibold">
                       {period.period}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {period.description}
+                    <AccordionContent className="text-muted-foreground space-y-4">
+                      {period.description.map((paragraph, pIndex) => (
+                        <p key={pIndex}>{paragraph}</p>
+                      ))}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
