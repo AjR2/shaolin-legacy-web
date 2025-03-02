@@ -71,7 +71,6 @@ export type Database = {
           day: string
           id: string
           instructor: string
-          level: string
           name: string
           time: string
         }
@@ -80,7 +79,6 @@ export type Database = {
           day: string
           id?: string
           instructor: string
-          level: string
           name: string
           time: string
         }
@@ -89,7 +87,6 @@ export type Database = {
           day?: string
           id?: string
           instructor?: string
-          level?: string
           name?: string
           time?: string
         }
