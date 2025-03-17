@@ -4,7 +4,6 @@ import { DaySchedule } from "@/components/schedule/DaySchedule";
 
 const Schedule = () => {
   const { schedule, loading } = useSchedule();
-  const userAttendance = []; // Empty attendance since we removed login
 
   if (loading) {
     return (
@@ -24,9 +23,6 @@ const Schedule = () => {
             key={day}
             day={day}
             classes={classes}
-            userAttendance={userAttendance}
-            onRegister={() => {}}
-            onAttendance={() => {}}
           />
         ))}
       </div>

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { scheduleData } from "@/data/scheduleData";
 import { Class } from "@/types/schedule";
 
 export function useSchedule() {
@@ -9,35 +9,18 @@ export function useSchedule() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const fetchScheduleData = async () => {
+    // Simulate loading for a smoother UI experience
+    const timer = setTimeout(() => {
       try {
-        setLoading(true);
-        const { data, error } = await supabase
-          .from("classes")
-          .select("*");
-
-        if (error) throw error;
-
-        // Group classes by day
-        const groupedByDay = (data as unknown as Class[]).reduce((acc: { [key: string]: Class[] }, curr: Class) => {
-          // Initialize the array for this day if it doesn't exist
-          if (!acc[curr.day]) {
-            acc[curr.day] = [];
-          }
-          // Add the current class to the array for this day
-          acc[curr.day].push(curr);
-          return acc;
-        }, {});
-
-        setSchedule(groupedByDay);
+        setSchedule(scheduleData);
+        setLoading(false);
       } catch (err) {
         setError(err as Error);
-      } finally {
         setLoading(false);
       }
-    };
+    }, 300);
 
-    fetchScheduleData();
+    return () => clearTimeout(timer);
   }, []);
 
   return { schedule, loading, error };

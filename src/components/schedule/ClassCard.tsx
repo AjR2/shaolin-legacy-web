@@ -1,12 +1,8 @@
 
-import { Class, Attendance } from "@/types/schedule";
+import { Class } from "@/types/schedule";
 
 interface ClassCardProps {
   classItem: Class;
-  attendance?: Attendance;
-  isRegistered: boolean;
-  onRegister: (classId: string) => void;
-  onAttendance: (classId: string) => void;
 }
 
 export const ClassCard = ({
