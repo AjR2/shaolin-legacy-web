@@ -1,27 +1,50 @@
 
 import { useState, useEffect } from "react";
-import { scheduleData } from "@/data/scheduleData";
+import { supabase } from "@/integrations/supabase/client";
 import { Class } from "@/types/schedule";
+import { useToast } from "@/hooks/use-toast";
 
 export function useSchedule() {
   const [schedule, setSchedule] = useState<{ [key: string]: Class[] }>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
-    // Simulate loading for a smoother UI experience
-    const timer = setTimeout(() => {
+    const fetchClasses = async () => {
       try {
-        setSchedule(scheduleData);
+        const { data, error } = await supabase
+          .from('classes')
+          .select('*')
+          .order('day');
+
+        if (error) throw error;
+
+        // Group classes by day
+        const groupedClasses: { [key: string]: Class[] } = {};
+        data?.forEach((classItem: Class) => {
+          if (!groupedClasses[classItem.day]) {
+            groupedClasses[classItem.day] = [];
+          }
+          groupedClasses[classItem.day].push(classItem);
+        });
+
+        setSchedule(groupedClasses);
         setLoading(false);
       } catch (err) {
+        console.error('Error fetching classes:', err);
+        toast({
+          title: "Error",
+          description: "Failed to load schedule. Please try again later.",
+          variant: "destructive",
+        });
         setError(err as Error);
         setLoading(false);
       }
-    }, 300);
+    };
 
-    return () => clearTimeout(timer);
-  }, []);
+    fetchClasses();
+  }, [toast]);
 
   return { schedule, loading, error };
 }
