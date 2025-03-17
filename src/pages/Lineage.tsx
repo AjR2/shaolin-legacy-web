@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -13,9 +12,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { LineageMaster, HistoryPeriod, TheoryItem } from "@/types/schedule";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Lineage = () => {
-  const lineageData = [
+  const lineageData: LineageMaster[] = [
     { 
       name: "Ji Long", 
       years: "1620 - ?", 
@@ -78,7 +79,7 @@ const Lineage = () => {
     }
   ];
 
-  const historyData = [
+  const historyData: HistoryPeriod[] = [
     {
       period: "Shaolin Kung Fu",
       description: [
@@ -110,7 +111,7 @@ const Lineage = () => {
     }
   ];
 
-  const theoryContent = [
+  const theoryContent: TheoryItem[] = [
     {
       title: "Three Sections (San Jie)",
       content: [
@@ -188,10 +189,31 @@ const Lineage = () => {
                 {lineageData.map((master, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="text-lg font-semibold">
-                      {master.name} ({master.years})
+                      <div className="flex items-center gap-4">
+                        {master.photo && (
+                          <Avatar className="h-10 w-10 border border-muted">
+                            <AvatarImage src={master.photo} alt={master.name} />
+                            <AvatarFallback>{master.name.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                        )}
+                        <span>{master.name} ({master.years})</span>
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      {master.description}
+                      <div className="flex flex-col md:flex-row gap-4">
+                        {master.photo && (
+                          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
+                            <img 
+                              src={master.photo} 
+                              alt={master.name} 
+                              className="rounded-md max-w-full h-auto shadow-sm" 
+                            />
+                          </div>
+                        )}
+                        <div className={master.photo ? "md:w-3/4" : "w-full"}>
+                          {master.description}
+                        </div>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -211,12 +233,33 @@ const Lineage = () => {
                 {historyData.map((period, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="text-lg font-semibold">
-                      {period.period}
+                      <div className="flex items-center gap-4">
+                        {period.photo && (
+                          <Avatar className="h-10 w-10 border border-muted">
+                            <AvatarImage src={period.photo} alt={period.period} />
+                            <AvatarFallback>{period.period.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                        )}
+                        <span>{period.period}</span>
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground space-y-4">
-                      {period.description.map((paragraph, pIndex) => (
-                        <p key={pIndex}>{paragraph}</p>
-                      ))}
+                      <div className="flex flex-col md:flex-row gap-4">
+                        {period.photo && (
+                          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
+                            <img 
+                              src={period.photo} 
+                              alt={period.period} 
+                              className="rounded-md max-w-full h-auto shadow-sm" 
+                            />
+                          </div>
+                        )}
+                        <div className={period.photo ? "md:w-3/4" : "w-full"}>
+                          {period.description.map((paragraph, pIndex) => (
+                            <p key={pIndex} className="mb-4">{paragraph}</p>
+                          ))}
+                        </div>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -236,10 +279,37 @@ const Lineage = () => {
                 {theoryContent.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="text-lg font-semibold">
-                      {item.title}
+                      <div className="flex items-center gap-4">
+                        {item.photo && (
+                          <Avatar className="h-10 w-10 border border-muted">
+                            <AvatarImage src={item.photo} alt={item.title} />
+                            <AvatarFallback>{item.title.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                        )}
+                        <span>{item.title}</span>
+                      </div>
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
-                      {item.content}
+                      <div className="flex flex-col md:flex-row gap-4">
+                        {item.photo && (
+                          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
+                            <img 
+                              src={item.photo} 
+                              alt={item.title} 
+                              className="rounded-md max-w-full h-auto shadow-sm" 
+                            />
+                          </div>
+                        )}
+                        <div className={item.photo ? "md:w-3/4" : "w-full"}>
+                          {Array.isArray(item.content) ? (
+                            item.content.map((paragraph, pIndex) => (
+                              <p key={pIndex} className="mb-4">{paragraph}</p>
+                            ))
+                          ) : (
+                            <p>{item.content}</p>
+                          )}
+                        </div>
+                      </div>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -253,3 +323,4 @@ const Lineage = () => {
 };
 
 export default Lineage;
+

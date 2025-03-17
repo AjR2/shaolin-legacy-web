@@ -15,3 +15,22 @@ export interface Attendance {
   attended_date?: string;
   status: string;
 }
+
+export interface LineageMaster {
+  name: string;
+  years: string;
+  description: string;
+  photo?: string; // Optional photo URL
+}
+
+export interface HistoryPeriod {
+  period: string;
+  description: string[];
+  photo?: string; // Optional photo URL
+}
+
+export interface TheoryItem {
+  title: string;
+  content: string | string[];
+  photo?: string; // Optional photo URL
+}
