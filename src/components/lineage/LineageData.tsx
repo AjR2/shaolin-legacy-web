@@ -1,3 +1,4 @@
+
 import { LineageMaster, HistoryPeriod, TheoryItem } from "@/types/schedule";
 
 // Export the data so it's not duplicated in the Lineage.tsx component
@@ -91,5 +92,26 @@ export const historyData: HistoryPeriod[] = [
       "The life of monks is subject to the precepts of Buddhism, which indicate the tenet of Buddhism 'harboring compassion and helping sentient beings sail to the world of joy'. They are rules of conduct for Buddhists. There are five basic precepts in Buddhism, refraining from killing, refraining from robbery, refraining from sex, refraining from liquor and refraining from lies. The precepts have been developed into precepts in practicing martial arts in the particular environment of Shaolin Temple and when shown in the practitioners, these precepts can also be called their ethics in practicing martial arts. These precepts have also directly affected the technical style of Shaolin Kungfu. Monks in Shaolin temple practice martial arts only for self defense rather than offense. Therefore Shaolin Kungfu shows features of self-restraint and modesty from time to time. Its movements do not require large space and are restrained, stressing on internal strength; the movements are brief but strong and capable of winning by striking only after the opponents have struck.",
       "Shaolin Kungfu is taught mainly by oral formulas handed down from generation to generation. In history, the recognition of inheritors of Shaolin Kungfu was based on the patriarchal clan system of Shaolin temple. In the process of teaching and learning Shaolin Kungfu, it is necessary for masters to teach disciples by personal example as well as oral instruction and for disciples to study diligently. The inheritance of high level Shaolin Kungfu always depends on the teaching and oral instruction of masters as well as disciples' spiritual comprehension of Chan Buddhism. To reach such level of Kungfu, monks have to improve themselves on both daily Chan studies and Kungfu practices. The idea behind Shaolin Kungfu is the belief in the combination of Chan and martial arts."
     ],
+    photo: "/ShaolinCommunity.png" // Example photo added
+  }
+];
 
-
+// Add the missing theoryContent export that's referenced in Lineage.tsx
+export const theoryContent: TheoryItem[] = [
+  {
+    title: "The Five Elements Theory",
+    content: [
+      "The Five Elements theory is central to Shaolin martial arts philosophy. It represents the five phases of energy: Water, Wood, Fire, Earth, and Metal. Each element has specific characteristics that relate to fighting techniques, strategies, and personal development.",
+      "In practice, students learn to embody these elements, flowing like water when evasion is needed, standing firm like earth when stability is required, and attacking with the explosive force of fire when the moment is right."
+    ],
+    photo: "/SifuWoodStance.png" // Example photo added
+  },
+  {
+    title: "The Six Harmonies",
+    content: [
+      "Shaolin training emphasizes the Six Harmonies principle, which includes three external harmonies (shoulders and hips, elbows and knees, hands and feet) and three internal harmonies (heart and mind, mind and energy, energy and force).",
+      "Only when these harmonies are achieved can a practitioner reach their full potential. True mastery comes when the body moves as one unified whole, with every action supported by proper alignment, breathing, and mental focus."
+    ],
+    photo: "/ShiYongxin.png" // Example photo added
+  }
+];
