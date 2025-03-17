@@ -72,7 +72,7 @@ export const lineageData: LineageMaster[] = [
     name: "Shi Yanruan", 
     years: " ", 
     description: "Master Yanruan was admitted as a young child to Hu Zhengsheng's Kungfu academy. After receiving the training and guidance of Hu Zhengsheng, Yanruan was selected to enter the Shaolin Temple by Abbot Shi Yongxin. During his time at the Shaolin Temple, Shi Yanruan taught students from all over the world. He also accompanied Abbot Shi YongXin on performances all around the world, winning him an excellent reputation in the world of Shaolin Kungfu.",
-    photo: "/ShiYanruan.png" // Example photo added
+    photo: "/ShiYanruan.png"
   }
 ];
 
