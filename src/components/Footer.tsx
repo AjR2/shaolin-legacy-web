@@ -9,25 +9,28 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Visit Us</h3>
             <address className="not-italic">
-              123 Martial Arts Way<br />
-              Rockville, MD 20850<br />
+              15257 Display Ct.<br />
+              Rockville, MD  20850<br />
+              United States
+            </address>
+            <address className="not-italic">
+              6330 Trotter Rd..<br />
+              Clarksville, MD 21029<br />
               United States
             </address>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p>Phone: (301) 555-0123</p>
-            <p>Email: info@shaolinrockville.com</p>
+            <p>Phone: 301-251-2958</p>
+            <p>Email: info@shaolintemplekungfu.org</p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Hours</h3>
-            <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
-            <p>Saturday: 9:00 AM - 5:00 PM</p>
-            <p>Sunday: Closed</p>
+            <h3 className="text-lg font-semibold mb-4">Non-Profit Organization</h3>
+            <p>All donations are tax deductible</p>
           </div>
         </div>
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Shaolin Temple Rockville. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Shaolin Temple Traditional Kung Fu. All Rights Reserved</p>
         </div>
       </div>
     </footer>
