@@ -94,15 +94,7 @@ const Videos = () => {
       duration: "3 minutes 51 seconds",
       category: "instructional",
     },
-    {
-      title: "Staff",
-      description: "Understanding the basics of Shaolin forms practice",
-      videoUrl: "https://youtu.be/hcYLpj4cpGQ",
-      instructor: "Shi Yanruan",
-      level: "Advanced",
-      duration: "55 seconds",
-      category: "kungfu",
-    },
+    
     {
       title: "Tong Bi Sword",
       description: "Understanding the basics of Shaolin forms practice",
