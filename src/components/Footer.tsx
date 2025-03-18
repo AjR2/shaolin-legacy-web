@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="bg-background text-foreground border-t border-border mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row md:items-start gap-8">
+        <div className="flex flex-col md:flex-row md:items-center gap-8">
           <div className="flex-shrink-0 w-full md:w-36 lg:w-48 flex justify-center md:justify-start">
             <img 
               src="/学校LOGO新 (1).png" 
