@@ -1,7 +1,16 @@
-
 import { useSchedule } from "@/hooks/useSchedule";
 import { DaySchedule } from "@/components/schedule/DaySchedule";
 import { Skeleton } from "@/components/ui/skeleton";
+
+const dayOrder = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
 
 const Schedule = () => {
   const { schedule, loading, error } = useSchedule();
@@ -37,16 +46,20 @@ const Schedule = () => {
     );
   }
 
+  const sortedDays = Object.keys(schedule).sort((a, b) => {
+    return dayOrder.indexOf(a) - dayOrder.indexOf(b);
+  });
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-3xl font-bold text-temple-900 mb-8">Class Schedule</h1>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {Object.entries(schedule).map(([day, classes]) => (
+        {sortedDays.map(day => (
           <DaySchedule
             key={day}
             day={day}
-            classes={classes}
+            classes={schedule[day]}
           />
         ))}
       </div>

@@ -4,6 +4,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { Class } from "@/types/schedule";
 import { useToast } from "@/hooks/use-toast";
 
+// Define day order for sorting
+const dayOrder = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+
 export function useSchedule() {
   const [schedule, setSchedule] = useState<{ [key: string]: Class[] }>({});
   const [loading, setLoading] = useState(true);
