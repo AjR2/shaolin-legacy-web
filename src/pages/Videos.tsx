@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -18,7 +17,7 @@ const Videos = () => {
     { id: "all", name: "All Videos", icon: BookOpen },
     { id: "instructional", name: "Instructional", icon: BookOpen },
     { id: "kungfu", name: "Kung Fu", icon: Target },
-    { id: "students", name: "Students", icon: Users },
+    { id: "student", name: "Students", icon: Users },
   ];
 
   const photoCategories = [
@@ -33,23 +32,19 @@ const Videos = () => {
     { id: "performance", name: "Performance", icon: Video },
   ];
 
-  // Helper function to convert YouTube URLs to embed format
   const getEmbedUrl = (url: string) => {
     if (!url) return "";
     
-    // For youtu.be format
     if (url.includes("youtu.be")) {
       const id = url.split("youtu.be/")[1]?.split("&")[0].split("?")[0];
       return `https://www.youtube.com/embed/${id}`;
     }
     
-    // For youtube.com/watch format
     if (url.includes("youtube.com/watch")) {
       const id = url.split("v=")[1]?.split("&")[0];
       return `https://www.youtube.com/embed/${id}`;
     }
     
-    // If already in embed format or unknown format, return as is
     return url;
   };
 
@@ -212,7 +207,6 @@ const Videos = () => {
         <TabsContent value="videos">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col md:flex-row gap-6">
-              {/* Smaller width sidebar that doesn't span the whole page */}
               <div className="w-full md:w-64 flex-shrink-0">
                 <div className="bg-muted rounded-lg p-4">
                   <h3 className="text-lg font-medium mb-4">Video Categories</h3>
@@ -236,7 +230,6 @@ const Videos = () => {
                 </div>
               </div>
               
-              {/* Video grid takes the remaining space */}
               <div className="flex-1">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                   {filteredVideos.map((video, index) => (
@@ -274,7 +267,6 @@ const Videos = () => {
         <TabsContent value="photos">
           <div className="flex flex-col space-y-6">
             <div className="flex flex-col md:flex-row gap-6">
-              {/* Photo categories sidebar */}
               <div className="w-full md:w-64 flex-shrink-0">
                 <div className="bg-muted rounded-lg p-4">
                   <h3 className="text-lg font-medium mb-4">Photo Categories</h3>
@@ -298,7 +290,6 @@ const Videos = () => {
                 </div>
               </div>
               
-              {/* Photos grid */}
               <div className="flex-1">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredPhotos.map((photo, index) => (
