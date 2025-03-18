@@ -8,27 +8,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarProvider,
-} from "@/components/ui/sidebar";
-import { BookOpen, Users, Target } from "lucide-react";
+import { BookOpen, Users, Target, Medal, School, Brush, Cloud, Gift, Video } from "lucide-react";
 
 const Videos = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activePhotoCategory, setActivePhotoCategory] = useState<string>("all");
 
   const videoCategories = [
     { id: "all", name: "All Videos", icon: BookOpen },
     { id: "instructional", name: "Instructional", icon: BookOpen },
     { id: "kungfu", name: "Kung Fu", icon: Target },
     { id: "students", name: "Students", icon: Users },
+  ];
+
+  const photoCategories = [
+    { id: "all", name: "All Photos", icon: BookOpen },
+    { id: "yongxin", name: "Master Shi Yongxin", icon: Medal },
+    { id: "yanruan", name: "Shi Yanruan", icon: Medal },
+    { id: "students", name: "Students", icon: Users },
+    { id: "classes", name: "Classes", icon: School },
+    { id: "meditation", name: "Meditation", icon: Cloud },
+    { id: "buddhasbirthday", name: "Buddha's Birthday", icon: Gift },
+    { id: "school", name: "School", icon: Brush },
+    { id: "performance", name: "Performance", icon: Video },
   ];
 
   const tutorialVideos = [
@@ -67,24 +69,52 @@ const Videos = () => {
       description: "Students practicing in the temple courtyard",
       imageUrl: "/ShaolinCommunity.png",
       date: "2023",
+      category: "students",
     },
     {
       title: "Master Demonstration",
       description: "Sifu demonstrating advanced techniques",
       imageUrl: "/SifuWoodStance.png",
       date: "2023",
+      category: "yanruan",
     },
     {
       title: "Competition Team",
       description: "Our students at the national championship",
       imageUrl: "/asherComp.png",
       date: "2023",
+      category: "performance",
+    },
+    {
+      title: "Temple Celebration",
+      description: "Annual Buddha's Birthday ceremony",
+      imageUrl: "/ShiYanruan.png",
+      date: "2023",
+      category: "buddhasbirthday",
+    },
+    {
+      title: "Abbot Visit",
+      description: "Venerable Abbot Shi Yongxin's visit to our school",
+      imageUrl: "/ShiYongxin.png",
+      date: "2022",
+      category: "yongxin",
+    },
+    {
+      title: "Morning Practice",
+      description: "Students in meditation session",
+      imageUrl: "/ShiDonnie.png",
+      date: "2023",
+      category: "meditation",
     },
   ];
 
   const filteredVideos = activeCategory === "all" 
     ? tutorialVideos 
     : tutorialVideos.filter(video => video.category === activeCategory);
+
+  const filteredPhotos = activePhotoCategory === "all"
+    ? photos
+    : photos.filter(photo => photo.category === activePhotoCategory);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -98,7 +128,6 @@ const Videos = () => {
 
         <TabsContent value="videos">
           <div className="flex flex-col space-y-6">
-            {/* Place the SidebarProvider inside the TabsContent, not wrapping the entire content */}
             <div className="flex flex-col md:flex-row gap-6">
               {/* Smaller width sidebar that doesn't span the whole page */}
               <div className="w-full md:w-64 flex-shrink-0">
@@ -160,27 +189,58 @@ const Videos = () => {
         </TabsContent>
 
         <TabsContent value="photos">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {photos.map((photo, index) => (
-              <Card key={index} className="overflow-hidden">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    src={photo.imageUrl}
-                    alt={photo.title}
-                    className="w-full h-64 object-cover"
-                  />
+          <div className="flex flex-col space-y-6">
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Photo categories sidebar */}
+              <div className="w-full md:w-64 flex-shrink-0">
+                <div className="bg-muted rounded-lg p-4">
+                  <h3 className="text-lg font-medium mb-4">Photo Categories</h3>
+                  <ul className="space-y-2">
+                    {photoCategories.map((category) => (
+                      <li key={category.id}>
+                        <button
+                          onClick={() => setActivePhotoCategory(category.id)}
+                          className={`flex items-center w-full p-2 rounded-md text-sm ${
+                            activePhotoCategory === category.id
+                              ? "bg-primary text-primary-foreground"
+                              : "hover:bg-muted-foreground/10"
+                          }`}
+                        >
+                          <category.icon className="h-4 w-4 mr-2" />
+                          <span>{category.name}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <CardHeader>
-                  <CardTitle>{photo.title}</CardTitle>
-                  <CardDescription>{photo.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Captured: {photo.date}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+              </div>
+              
+              {/* Photos grid */}
+              <div className="flex-1">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredPhotos.map((photo, index) => (
+                    <Card key={index} className="overflow-hidden">
+                      <div className="aspect-w-16 aspect-h-9">
+                        <img
+                          src={photo.imageUrl}
+                          alt={photo.title}
+                          className="w-full h-64 object-cover"
+                        />
+                      </div>
+                      <CardHeader>
+                        <CardTitle>{photo.title}</CardTitle>
+                        <CardDescription>{photo.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Captured: {photo.date}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </TabsContent>
       </Tabs>
