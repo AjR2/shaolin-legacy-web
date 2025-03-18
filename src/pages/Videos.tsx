@@ -80,6 +80,15 @@ const Videos = () => {
       category: "instructional",
     },
     {
+      title: "Staff",
+      description: "Understanding the basics of Shaolin forms practice",
+      videoUrl: "https://youtu.be/L43Inkt-oDQ",
+      instructor: "Shi Yanruan",
+      level: "Advanced",
+      duration: "55 seconds",
+      category: "kungfu",
+    },
+    {
       title: "Tong Bi Sword",
       description: "Understanding the basics of Shaolin forms practice",
       videoUrl: "https://youtu.be/44seTxBNHno",
@@ -96,15 +105,6 @@ const Videos = () => {
       level: "Intermediate",
       duration: "3 minutes 12 seconds",
       category: "instructional",
-    },
-    {
-      title: "Seven Star Fist",
-      description: "Understanding the basics of Shaolin forms practice",
-      videoUrl: "https://www.youtube.com/watch?v=JPmH-rgOwLE&t=21s",
-      instructor: "Shi Yanruan",
-      level: "Intermediate",
-      duration: "2 minutes 15 seconds",
-      category: "kungfu",
     },
     {
       title: "Tong Bi Sword(Student)",
