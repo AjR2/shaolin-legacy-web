@@ -97,7 +97,7 @@ const Videos = () => {
     {
       title: "Staff",
       description: "Understanding the basics of Shaolin forms practice",
-      videoUrl: "https://youtu.be/L43Inkt-oDQ",
+      videoUrl: "https://youtu.be/hcYLpj4cpGQ",
       instructor: "Shi Yanruan",
       level: "Advanced",
       duration: "55 seconds",
