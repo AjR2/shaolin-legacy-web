@@ -33,6 +33,26 @@ const Videos = () => {
     { id: "performance", name: "Performance", icon: Video },
   ];
 
+  // Helper function to convert YouTube URLs to embed format
+  const getEmbedUrl = (url: string) => {
+    if (!url) return "";
+    
+    // For youtu.be format
+    if (url.includes("youtu.be")) {
+      const id = url.split("youtu.be/")[1]?.split("&")[0].split("?")[0];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+    
+    // For youtube.com/watch format
+    if (url.includes("youtube.com/watch")) {
+      const id = url.split("v=")[1]?.split("&")[0];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+    
+    // If already in embed format or unknown format, return as is
+    return url;
+  };
+
   const tutorialVideos = [
     {
       title: "Five Motions",
@@ -223,7 +243,7 @@ const Videos = () => {
                     <Card key={index} className="flex flex-col">
                       <div className="aspect-video w-full bg-temple-100">
                         <iframe
-                          src={video.videoUrl}
+                          src={getEmbedUrl(video.videoUrl)}
                           title={video.title}
                           className="w-full h-full"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
