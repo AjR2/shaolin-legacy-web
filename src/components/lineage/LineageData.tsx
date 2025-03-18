@@ -93,25 +93,161 @@ export const historyData: HistoryPeriod[] = [
       "Shaolin Kungfu is taught mainly by oral formulas handed down from generation to generation. In history, the recognition of inheritors of Shaolin Kungfu was based on the patriarchal clan system of Shaolin temple. In the process of teaching and learning Shaolin Kungfu, it is necessary for masters to teach disciples by personal example as well as oral instruction and for disciples to study diligently. The inheritance of high level Shaolin Kungfu always depends on the teaching and oral instruction of masters as well as disciples' spiritual comprehension of Chan Buddhism. To reach such level of Kungfu, monks have to improve themselves on both daily Chan studies and Kungfu practices. The idea behind Shaolin Kungfu is the belief in the combination of Chan and martial arts."
     ],
     photo: "/ShaolinCommunity.png"
+  },
+  {
+    period: "Kung Fu Corps",
+    description: [
+      "Shaolin Kungfu Monk Corps’s predecessor was the Shaolin Warrior Monks. During the Tang Dynasty, Emperor Li Shiming (598-649 A.D), indebted to the thirteen monks for saving his life, granted the privilege of maintaining warrior monks at the Shaolin Temple.",
+      " Late in the Song Dynasty, Emperor Taizu (founder of the Song Dynasty from 960 to 976) paid a visit to the Shaolin Temple, and following his visit he dispatched batches of military troops to the temple to train the warrior monks and master Shaolin martial arts.",
+      "During the Yuan Dynasty, the Shaolin Abbot Fuyu was appointed as Grand Preceptor by the royal court where he strongly advocated for the warrior monks’ Kungfu practices.",
+      "The Ming Dynasty witnessed the largest ever scale of warrior monks at the Shaolin Temple, with over a thousand standing warrior monks. More than 500 warrior monks enlisted and fought back Japanese pirates, winning honor for the Shaolin Temple.",
+      "In the Qing Dynasty, the royal court suspected the temple of plotting to overturn the Qing Dynasty and reinstate the Ming Dynasty, and therefore prohibited the practice of martial arts. However, having a fondness for Kungfu, some warrior monks practiced covertly by themselves.",
+      "The Republic of China revived Shaolin Kungfu. While visiting the Shaolin Temple, the then-president Chiang Kai-shek was enthralled by the demonstrations of warrior monks.",
+      "During the most prosperous period for the Shaolin Temple, the number of standing warrior monks reached over one thousand. Warrior monks were enlisted in the army many times and contributed to many national victories against aggression - most notably in defending China against the Japanese invasion.",
+      "After the founding of the People’s Republic of China, especially after the Third Plenary Session of the Eleventh Central Committee, the Chinese government’s religious policies were abolished and participation in traditional sports gradually rose. In 1987, in order to promote Shaolin, Master Shi Yongxin formed the Shaolin Wushu Team. In 1989, the Shaolin Wushu Team was renamed as the Shaolin Kungfu Monk Corps. The Kungfu Monk Corps follows the historical pattern of Shaolin warrior monks, performing Shaolin Kungfu with the aim of spreading traditional Kungfu as well as authentic Shaolin Chan culture.",
+      "Currently, as the inheritor and ambassador of Shaolin Kungfu and Chinese culture, the Shaolin Kungfu Corps has been invited to over 60 regions and countries in Europe, Asia and the Americas to perform authentic Shaolin Kungfu."
+    ],
+    photo: "/kungFuCorp.png"
   }
 ];
 
 // Define the theoryContent array with the original content
 export const theoryContent: TheoryItem[] = [
   {
-    title: "The Five Elements Theory",
+    title: "THREE SECTIONS (SAN JIE)",
     content: [
-      "The Five Elements theory is central to Shaolin martial arts philosophy. It represents the five phases of energy: Water, Wood, Fire, Earth, and Metal. Each element has specific characteristics that relate to fighting techniques, strategies, and personal development.",
-      "In practice, students learn to embody these elements, flowing like water when evasion is needed, standing firm like earth when stability is required, and attacking with the explosive force of fire when the moment is right."
+      "Human bodies have the same principles: feet to hips (Root Section), waist to chest (Middle Section), and shoulder to hands (Upper Section). Each of these main sections has three sub sections.",
+      "Upper Section:",
+      " ",
+      "Shoulder (Root), Elbows (Middle), Hands (Upper)",
+      " ",
+      "Middle Section:",
+      " ",
+      "Chest (Upper), Heart (Middle), Dantian <low abdomen> (Root)",
+      " ",
+      "Root Section:",
+      " ",
+      "Hips (Root), Knees (Middle), Feet（Upper）",
+      " ",
+      "The knack of the three sections: the Uppers move, then the Middles follow, and then the Roots chase after. For example , the movement of punch, the fist is the upper of the upper section , after you lift your fist , the elbow (Middle ) follows and then the shoulder (Root) chases after . Only in this way, you can explosive power smoothly. When you progress forward, life the feet, then the knee follows, and then the hip chases after. Thus the center of gravity of the body is moved forward, the ten toes can grasp on the earth stablely like Mount Tai."
     ],
-    photo: "/SifuWoodStance.png"
+    photo: "/threeSections.png"
   },
   {
-    title: "The Six Harmonies",
+    title: "FOUR POINTS (SI SHAO)",
     content: [
-      "Shaolin training emphasizes the Six Harmonies principle, which includes three external harmonies (shoulders and hips, elbows and knees, hands and feet) and three internal harmonies (heart and mind, mind and energy, energy and force).",
-      "Only when these harmonies are achieved can a practitioner reach their full potential. True mastery comes when the body moves as one unified whole, with every action supported by proper alignment, breathing, and mental focus."
+      "What should I focus on when practicing Wushu?",
+      " ",
+      "While practicing, you should focus on your eyes, ears and heart. The eyes are “searching” and “watching” at the same time. Normally, we just look, but you must also look with your heart. We should look with our hearts when we practice Wushu. The ears are “listening”. They should always be listening to your surroundings. For example, if someone calls us, we should listen with our hearts.",
+      " ",
+      "I want to know how to get the most power out of my body",
+      " ",
+      "The body can be divided into tendons, bones, muscles, qi and blood. Our internal power is derived by unifying all of these. Teeth are like the end point of our bones (the teeth are like the external part of the bones). Your teeth should feel as though they can bite through tendons. Hair is like the end point of our blood system. Your hair should feel as though it can lift a hat off your head; thus, the blood will get to where you want. Fingernails are like the end point of our tendons. Your fingernails should feel as though they can cut through bone, which will in turn strengthen your tendons. And the tongue is like the end point of our muscles. Your tongue should feel as though it can push your teeth out of place. Combine these four end points together with strength to form internal power.",
     ],
-    photo: "/ShiYongxin.png"
+    photo: "/fourPoints.png"
+  },
+  {
+    title: "THE FIVE ELEMENTS (WU XING)",
+    content: [
+      "1 - The Five Elements?",
+      "The five elements are water, wood, metal, fire and earth. The world consists of these five elements and they have a mutual promotion and restraint between each other. They have a relationship between the five major organs of the body. The mouth is linked to the heart which represents the element fire. The nose is linked to the lungs which represent metal. The eyes are linked to the liver which represents wood. The ears are linked to the kidneys which represents water. The philtrum is linked to the spleen which represents earth. The heart is fire, move the heart, generate power. The lungs are metal, move the lungs, make sounds like thunder. The liver is wood, move the liver, the fire comes out. The kidney is water, move the kidney, you move as quickly as the wind. The spleen is earth, move the spleen, you attach with great power. The five major organs are like five entrances to the body, we have to guard our own entrances and restrain your opponent from attacking them.",
+      " ",
+      "2 - Cycles",
+      "The five elements are not isolated; rather they work closely together and have their own internal orders and patterns. The rules that govern the five elements include a mutual generation cycle, a mutual restriction cycle, over restriction, reverse restriction and balance between generation and restriction.",
+      " ",
+      "2.1 - Mutual generation cycle",
+      "One element (serving as parent) enriches, nourishes, strengthens, promotes growth and development of the following element (serving as child). Generating: Wood feeds Fire - Fire creates Earth (ash) - Earth bears Metal - Metal (trace elements) collects, enrich Water - Water nourishes Wood. Interpretation: (supporting, helping)",
+      "- Wood is the supporting element of Fire. Fire can release the power of Wood.",
+      "- Fire is the supporting element of Earth. Earth can release the power of Fire.",
+      "- Earth is the supporting element of Metal. Metal can release the power of Earth.",
+      "- Metal is the supporting element of Water. Water can release the power of Metal.",
+      "- Water is the supporting element of Wood. Wood can release the power of Water.",
+      " ",
+      "2.2 - Mutual restriction cycle(overcoming)",
+      "Wood parts Earth (such as roots; or, Trees can prevent soil erosion);",
+      "Metal chops Wood;",
+      "Fire melts Metal;",
+      "Water quenches Fire;",
+      "Earth dams (or muddies or absorbs) Water;",
+      "This cycle might also be called 'controls', 'restrains' or 'fathers'.",
+      " ",
+      "2.3 - Over-restriction cycle",
+      "The Chinese word for restriction, 'ke' means 'inhibition' or 'winning over'. In nature, wood controls the earth. (See figure 3.) In the body, the liver (a wood element) controls the spleen (an earth element) and inhibits its functions in a balanced manner. If the liver's function becomes excessive, there will be over-restriction of spleen function causing an imbalance in the body. This happens because excessive liver function produces fire, which in turns affects the smooth flow of qi. Without good qi flow to start, the spleen cannot successfully transform food into more qi.",
+      " ",
+      "2.4 - Reverse restriction (weakening) cycle",
+      "If the enemy is too strong, the controlling element itself becomes controlled in a reverse manner. When wood is too strong and its controlling metal axe is too blunt, the axe cannot cut the wood and may even break as a result of the rebound force if an attempt is made to chop it. This illustrates reverse restriction because the wood is able to restrict metal, which is not usually the case. In our body, if the spleen functions excessively, its controlling liver will also be restricted in a reverse manner. The excessive spleen function will produce heat and dampness, which doesn't have a sufficient release in the body. The constrained damp heat will heat up the liver and the gall bladder. When this occurs, the gall bladder can no longer properly regulate bile secretion, and disease occurs.",
+      "Reverse restriction (weakening) cycle :",
+      "- Wood insults Metal (axe cannot cut metal, can even break)",
+      "- Metal insults Fire (can extinguish fire)",
+      "- Fire insults Water (fire evaporates water)",
+      "- Water insults Earth (water overcomes dam)",
+      "- Earth insults Wood (earth too dense, roots cannot part it)",
+      " ",
+      "2.5 - Balance between generation and restriction",
+      "A famous Traditional Chinese Medicine physician Zhang JingYue (1563-1640 AD) said, 'The mechanism of creation cannot do without promotion. Neither can it do without control. If there is no promotion, there will be no development and growth. If there is no control, the unbalanced excitement will be harmful. It is necessary to have control inside promotion and to have promotion inside control, so that everything can operate continuously, in both a complementary and opposite manner.'",
+      "Balance between generation and restriction is important for normal transformation of the five elements. Each element is under the influence of the other four in some way. Wood generates fire and water generates wood. On the other hand, wood inhibits earth, but itself is inhibited by metal. In this way, all five elements establish an intricate homeostasis in nature. This wisdom has also been applied to TCM by incorporating the theory of the five elements into health maintenance strategies, which have been successful for thousands of years."
+    ],
+    photo: "/fiveElements.png"
+  },
+  {
+    title: "SIX UNIONS (LIU HE)",
+    content: [
+      "The six Unions include the Internal Three Unions which are the unions of the heart and the mind, the mind and the Qi , the Qi and the strength , and the External Three Unions involving the unions of the hands and feet , the elbow and the knee , the shoulders and the hipbone .The six Unions means combining the Internal Three Unions and the External Three Unions into one. It also means combining the body and the mind into one.Training Kungfu with the Six Unions,you find your own way to move and fight."
+    ],
+    photo: "/sixUnions.png"
+  },
+  {
+    title: "Kung Fu Qi Gong",
+    content: [
+      "About Qigong",
+      "Wushu Qigong is the qi controlled by the mind and the mind controlled by the heart. When you combine breathing with the heart and mind you generate Qi to then generate power. The longer you practice, the stronger your tendons and bones will become. They will feel full of energy and when you learn to use the strength accumulated in them you will be able to break bricks or even smash stones. If you punch the opponent with the strength, he will feel like being hitting by a heavy iron fist, no normal person can bear it. Qigong has the double effectiveness of health preservation and defense.",
+      " ",
+      "About Power",
+      "Qi is the source of energy, every movement in Wushu needs it. Energy comes from exercises; when practice Wushu qigong you have to converge with heart, mind, qi, energy and sound then mobilize the blood and energy and match it all with breathing by the direction of your mind. As a result your muscles, tendons and bones will have great strength. This power originates from Qi; it is generally called Qigongin Wushu.",
+      " ",
+      "About the relationship between Qi and Power",
+      "Qi that is used outside the body is calledExternal Force.Qi which is saved inside the body is calledInternal Energy; which cooperates with the Si Shao (Four Sections) and strength is calledNei Gong (Internal Power)",
+      " ",
+      "The way to breath",
+      "Before you do every movement when you train, you have to take a breath until your Qi flows directly to the Dantian (low abdomen). You have to focus your mind and attention on the way Qi flows in your body. Qi follows the heart and mind, your thoughts follow your Qi at the same time. You have to coordinate your breathing and body movements of stretching and bunching: move down your shoulders when you breathe out and stretch your chest when you breathe in .When you practice breathing, you have to breathe from shallow to deep, from slow to fast, and keep practicing. At the beginning you have to make your mind control your Qi and your movements until you master it, then you can breathe naturally and regularly following the movements.",
+      "The key to breathing is a slowly, evenly, deeply, long breath. You have to breathe in with the nose but breathe out with nose as well as mouth. Understand and master the way to breath, it is good and important for practicing well shaolin Wushu.",
+      "Qigong is a difficult internal exercise, if you start to study it, you have to work hard and do it patiently and constantly. The longer you practice, greater the skill you will master, and then you will understand Qigong and be able to harvest your Qi.",
+    ],
+    photo: "/qiGong.png"
+  },
+  {
+    title: "THE WAYS TO PRACTICE SHAOLIN KUNG FU",
+    content: [
+      "Ⅰ.Conditions",
+      " ",
+      "1.The Native Qualities：The Corporeity and the Intelligence",
+      "2.The Succession of Teachings From a Master to His Disciples: to decide the direction of training",
+      "3.The Acquired Hard-working: Perseverance, Methods and Comprehension.",
+      " ",
+      "Ⅱ.Notices",
+      " ",
+      "1.Mentality: should be genial and generous ; To be sensitive and studious ; Don’t feel ashamed to ask from anyone when learning.",
+      "2.Status: to study, to watch, to experience, to understand.",
+      "3.Methods: the more important aspects when training Kungfu. First, every movement or forms you practice, you have to understand the purpose you train and the state you reach, and then to analyze the detail and difficulty and master the  main points ;",
+      "- Second, you have to understand your own advantage and disadvantages, give full play to the advantage and make up the disadvantage at the same time. Don’t train blindly, or you would waste your energy and won’t get the point",
+      "- Third, relax your body, you must not be nervous, or your movements will be stiff and robotic, also you must not be loose or you won’t be able to do the movements correctly, you could even get worse. You cannot tell right from wrong when you’re in an unclear state and the feelings when you practice will become vague.",
+      "4. Comprehension: the most important aspects when training Kungfu. Do not practice blindly and not keep copying the movements from others, make references and cooperate with the coaches or the master, and then analyze and summarize. Only then the Kungfu you comprehend belongs to yourself and it has your own style. Kungfu has no specific form , only the trainers have their own performing styles .",
+      "5.Wushu Theory : It should be combined with practice. You have to understand and exercise the theories of San Jie (Three Sections), Si Shao(Four Points), Wu Xing(Five Elements), and Liu He(Six Unions). Remember the ancient motto :Practice just for fight.",
+      " ",
+      "When it is recommended but to train Shaolin Kungfu:",
+      "1.When you have great vigor and spirit;",
+      "2.When you have the desire to train;",
+      "3.When you are euphoric and happy;",
+      " ",
+      "When it is not recommended to train:",
+      "1.When you are tired , for it will affect the accuracy of your movements;",
+      "2.When you are depressed and sluggish , for it will hurt your viscera;",
+      "3.When your stomach is too full or when you are too hungry ; you should not train one hour before meals and two hours after meals , or it will hurt the visceral function .",
+      " ",
+      "Also",
+      "·You should train in fresh and peaceful place ;",
+      "·You should train everyday.",
+    ],
+    photo: "/fiveElements.png"
   }
 ];
