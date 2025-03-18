@@ -6,7 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const Schedule = () => {
   const { schedule, loading, error } = useSchedule();
-  const { user, isLoading: authLoading } = useAuth();
+  const { user, loading: authLoading } = useAuth();
 
   if (loading || authLoading) {
     return (
