@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export const Footer = () => {
@@ -6,9 +7,11 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row md:items-start gap-8">
           <div className="flex-shrink-0 w-full md:w-36 lg:w-48 flex justify-center md:justify-start">
-            <div className="w-24 h-24 bg-muted/20 rounded flex items-center justify-center">
-              <span className="text-xs text-muted-foreground">Logo</span>
-            </div>
+            <img 
+              src="/学校LOGO新 (1).png" 
+              alt="Shaolin Temple Logo" 
+              className="w-24 h-24 object-contain"
+            />
           </div>
           <div className="flex-grow">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
