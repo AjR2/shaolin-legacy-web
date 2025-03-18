@@ -67,7 +67,7 @@ export const lineageData: LineageMaster[] = [
     name: "Hu Zhengsheng", 
     years: " ", 
     description: "Master Hu Zhengsheng started his traditional Kungfu training at the age of 12. He first began studying under Zhang Guangjun at the Shaolin temple. He learned many forms and fighting skills including Xin Yi Liu He Quan, Guai Zi, (Walking Stick) Chun Qiu Da Dao (Spring & Autumn Da Dao), Cao Lian, Sheng Biao, Yue Ya Chan, Hu Tou Gou and many more. Master Hu Zhengsheng took care of Master Zhang Guangjun in his old age, helping him eat, clean, and dress himself. After training Hu Zhengsheng for 7 years at the Shaolin Temple, Grandmaster Zhang Guang Jun became quite old and as his life came to an end he told Hu Zheng Sheng to go and seek a grandmaster of traditional Shaolin Kungfu in San Bei village, Yang Guiwu. After Hu Zhengsheng was accepted as a disciple of Yang Guiwu he continued his traditional Shaolin Kungfu training for 15 more years, learning Shaolin Qin Na, Shaolin combat and self-defense techniques, and most importantly Shaolin Xin Yi Ba (Heart-Mind-Control).",
-    photo: "huZhengsheng.png" // Example photo added
+    photo: "huZhengSheng.png" // Example photo added
   },
   { 
     name: "Shi Yanruan", 
