@@ -31,7 +31,7 @@ export const lineageData: LineageMaster[] = [
     name: "Shi Haifa", 
     years: "1750—？", 
     description: "Hai Fa, also called Xiang Bo, was taught by the Shaolin Temple Grand Monk Ru Xiang. He was hardworking and mastered Qianjin Feet, Iron Fists, Xuanhua Axe, etc. all by himself. He was cranky, frank, and kind-hearted. He was given the nickname Black Whirlwind. Master Zhan Mo and Zhan De were his most noteworthy students.",
-    photo: "public/shihaifa.png" // Example photo added
+    photo: "shihaifa.png" // Example photo added
   },
   { 
     name: "Shi Zhanmo", 
