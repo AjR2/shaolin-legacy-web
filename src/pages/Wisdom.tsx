@@ -161,28 +161,28 @@ const Wisdom = () => {
       ]
     },
     {
-      id: "wellness",
-      title: "Wellness",
+      id: "xinyiba",
+      title: "Xin Yi Ba",
       icon: GraduationCap,
       content: [
         {
-          title: "Traditional Chinese Medicine",
-          description: "Ancient healing arts of the Shaolin Temple",
-          images: ["/threeSections.png", "/ShiYanruan.png", "/practice.png"],
+          title: "Xin Yi Ba Practice",
+          description: "Traditional movements of Xin Yi Ba",
+          images: [
+            "/ShiDonnie.png", 
+            "/qiGong.png", 
+            "/threeSections.png", 
+            "/ShiYanruan.png", 
+            "/practice.png", 
+            "/fourPoints.png", 
+            "/fiveElements.png", 
+            "/ShiYongxin.png", 
+            "/ShaolinCommunity.png"
+          ],
           text: [
-            "Shaolin monks developed extensive knowledge of human anatomy and medicinal herbs, creating a comprehensive system of healing to address injuries from training and combat.",
-            "The concept of meridians (energy channels) and acupoints informs both healing practices and martial applications. Knowledge of vital points can be used to restore health or, in combat situations, to neutralize an opponent.",
-            "Traditional remedies include herbal formulas, qigong exercises for specific conditions, therapeutic massage (tui na), acupressure, and specialized breathing techniques to promote recovery and maintain health."
-          ]
-        },
-        {
-          title: "Dietary Practices",
-          description: "Nutritional wisdom from Shaolin tradition",
-          images: ["/practice.png", "/ShiDonnie.png", "/fiveElements.png"],
-          text: [
-            "Traditionally, Shaolin monks followed a vegetarian diet in accordance with Buddhist precepts, believing that this practice supports both physical health and spiritual development.",
-            "Foods are classified according to their energetic properties (heating, cooling, neutral) and selected to balance the individual's constitution and address specific health conditions.",
-            "Mindful eating is practiced, with attention paid to the origin, preparation, and consumption of food. Meals are taken as a form of meditation, with awareness of the nourishment being received."
+            "Xin Yi Ba is a traditional internal martial art that focuses on heart (Xin) and mind (Yi) cultivation through eight (Ba) fundamental movements.",
+            "These movements integrate breath control, mental focus, and precise physical techniques to develop both martial ability and health cultivation.",
+            "Regular practice of Xin Yi Ba helps practitioners develop core strength, balance, coordination, and mental clarity while promoting longevity and vitality."
           ]
         }
       ]
@@ -265,13 +265,13 @@ const Wisdom = () => {
                               alt={`${item.title}`}
                               className="w-full rounded-md object-cover shadow-md h-64"
                             />
-                          ) : section.id === "manuscripts" ? (
+                          ) : section.id === "manuscripts" || section.id === "xinyiba" ? (
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                               {item.images.map((image, imageIdx) => (
                                 <div key={imageIdx} className="relative aspect-square">
                                   <img
                                     src={image}
-                                    alt={`Manuscript ${imageIdx + 1}`}
+                                    alt={`${section.id === "manuscripts" ? "Manuscript" : "Xin Yi Ba"} ${imageIdx + 1}`}
                                     className="w-full h-full rounded-md object-cover shadow-md"
                                   />
                                 </div>
