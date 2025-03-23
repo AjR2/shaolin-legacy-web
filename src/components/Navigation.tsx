@@ -48,6 +48,14 @@ export const Navigation = () => {
             >
               Values
             </Link>
+            <Link
+              to="/wisdom"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                location.pathname === "/wisdom" ? "bg-accent" : "hover:bg-accent"
+              }`}
+            >
+              Wisdom
+            </Link>
           </div>
         </div>
       </div>
