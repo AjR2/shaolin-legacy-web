@@ -52,7 +52,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Two Hands Hold up the Heavens",
         description: "Harmonizes the triple burner and regulates the spleen and stomach",
-        image: "/practice.png",
+        image: "/lovable-uploads/cc9a0876-b016-4efc-b48e-a5a5c18b331c.png",
         text: [
           "Stand with feet shoulder-width apart, arms relaxed at your sides, and knees slightly bent in a natural, comfortable posture.",
           "Inhale as you slowly raise your arms forward and upward, palms facing up, until hands meet above your head. Keep shoulders relaxed throughout the movement.",
@@ -63,7 +63,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Drawing the Bow to Shoot the Eagle",
         description: "Enhances the function of the lungs and expands the chest",
-        image: "/ShiDonnie.png",
+        image: "/lovable-uploads/09a22b93-309b-4263-9c0e-dc01257f6d66.png",
         text: [
           "Stand with feet wider than shoulder-width apart in a horse stance, knees bent and pointing outward.",
           "Cross arms in front of chest, then extend left arm to the left side as if drawing a bow, with left index finger pointing outward and thumb up.",
@@ -74,7 +74,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Separate Heaven and Earth",
         description: "Regulates the spleen and stomach functions",
-        image: "/qiGong.png",
+        image: "/lovable-uploads/70ce6112-c501-4aba-b06a-2449a74464ab.png",
         text: [
           "Begin in a shoulder-width stance with arms relaxed at your sides.",
           "Raise both palms to chest height, one hand facing up (heaven) and one facing down (earth).",
@@ -85,7 +85,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Wise Owl Gazes Backward",
         description: "Strengthens the neck and eyes, releases tension in neck and shoulders",
-        image: "/ShiYanruan.png",
+        image: "/lovable-uploads/4558fc38-62fb-4a9b-a9fa-f48f2c7314e0.png",
         text: [
           "Stand with feet shoulder-width apart, arms hanging naturally at sides.",
           "Without moving the body, slowly turn the head to look over one shoulder, as far as is comfortable without straining.",
@@ -96,7 +96,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Sway the Head and Swing the Tail",
         description: "Relieves stress and strain in the waist area",
-        image: "/fourPoints.png",
+        image: "/lovable-uploads/5b791241-cc99-4be0-9c3d-4559c485d036.png",
         text: [
           "Stand with feet wider than shoulder-width apart, hands on hips or thighs, knees slightly bent.",
           "Rotate the upper body to one side, then bend forward from the waist, allowing the opposite arm to swing toward the foot.",
@@ -107,7 +107,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Two Hands Hold the Feet to Strengthen the Kidneys and Waist",
         description: "Benefits the kidneys and strengthens the lower back",
-        image: "/threeSections.png",
+        image: "/lovable-uploads/5b791241-cc99-4be0-9c3d-4559c485d036.png",
         text: [
           "Stand with feet shoulder-width apart, arms at sides, knees slightly bent.",
           "Inhale, then exhale as you bend forward from the waist, keeping back straight initially, then allowing it to round.",
@@ -118,7 +118,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Clench the Fists and Glare Fiercely",
         description: "Increases general vitality and strengthens muscles",
-        image: "/fiveElements.png",
+        image: "/lovable-uploads/82b1992b-f46a-4afb-9f6d-19680ac25eed.png",
         text: [
           "Begin in a horse stance with feet wider than shoulders and toes pointing slightly outward.",
           "Make loose fists at your sides, then slowly raise them to waist height while inhaling.",
@@ -129,7 +129,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Bouncing on the Toes",
         description: "Harmonizes all organ functions and expels illness",
-        image: "/ShiYongxin.png",
+        image: "/lovable-uploads/1348773a-2f2e-42c1-8ff9-e378b3278e3a.png",
         text: [
           "Stand naturally with feet shoulder-width apart, arms relaxed at sides.",
           "Rise up onto the balls of both feet, lifting heels off the ground, then lower heels back down gently.",
