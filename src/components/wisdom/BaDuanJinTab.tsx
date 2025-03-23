@@ -1,7 +1,7 @@
 
 import React from "react";
 import WisdomCard from "./WisdomCard";
-import { WisdomSection } from "./WisdomTabs";
+import { WisdomSection } from "@/data/wisdomData";
 
 interface BaDuanJinTabProps {
   section: WisdomSection;

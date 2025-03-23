@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import React from "react";
-import { WisdomSectionContent } from "./WisdomTabs";
+import { WisdomSectionContent } from "@/data/wisdomData";
 
 interface WisdomCardProps {
   item: WisdomSectionContent;
