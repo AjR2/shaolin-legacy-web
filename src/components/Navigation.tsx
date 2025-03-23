@@ -17,6 +17,14 @@ export const Navigation = () => {
           </Link>
           <div className="flex items-center justify-center flex-grow space-x-4">
             <Link
+              to="/wisdom"
+              className={`px-3 py-2 rounded-md text-sm font-medium ${
+                location.pathname === "/wisdom" ? "bg-accent" : "hover:bg-accent"
+              }`}
+            >
+              Wisdom
+            </Link>
+            <Link
               to="/lineage"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === "/lineage" ? "bg-accent" : "hover:bg-accent"
@@ -47,14 +55,6 @@ export const Navigation = () => {
               }`}
             >
               Values
-            </Link>
-            <Link
-              to="/wisdom"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === "/wisdom" ? "bg-accent" : "hover:bg-accent"
-              }`}
-            >
-              Wisdom
             </Link>
           </div>
         </div>
