@@ -33,7 +33,7 @@ const InstructorProfile = ({
           <img
             src={imageUrl}
             alt={imageAlt}
-            className="w-full object-cover h-64 rounded-lg"
+            className="w-full h-64 object-cover object-top rounded-lg"
           />
         </div>
         <p className="text-muted-foreground">{bio}</p>
