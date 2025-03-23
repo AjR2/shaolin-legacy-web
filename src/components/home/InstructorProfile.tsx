@@ -29,11 +29,11 @@ const InstructorProfile = ({
         <CardDescription>{title}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="relative aspect-w-16 aspect-h-9">
+        <div className="overflow-hidden rounded-lg">
           <img
             src={imageUrl}
             alt={imageAlt}
-            className="w-full object-contain h-64 rounded-lg"
+            className="w-full object-cover h-64 rounded-lg"
           />
         </div>
         <p className="text-muted-foreground">{bio}</p>
