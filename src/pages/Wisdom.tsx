@@ -188,28 +188,18 @@ const Wisdom = () => {
       ]
     },
     {
-      id: "teachings",
-      title: "Teachings",
-      icon: Library,
+      id: "chuibazhifa",
+      title: "Shaolin Chui Ba Shi Fa",
+      icon: ListOrdered,
       content: [
         {
-          title: "Core Teachings",
-          description: "Essential wisdom passed through generations",
-          images: ["/fourPoints.png", "/ShiYanruan.png", "/threeSections.png"],
+          title: "Shaolin Chui Ba Shi Fa",
+          description: "The Eight Methods of Combat",
+          image: "/ShiYanruan.png",
           text: [
-            "The Four Noble Truths form the foundation of Buddhist teaching: the truth of suffering, the cause of suffering, the cessation of suffering, and the path leading to the cessation of suffering.",
-            "In Shaolin practice, these truths are applied practically. Physical training may involve discomfort (truth of suffering), which stems from resistance and attachment (cause). By accepting and moving through discomfort with awareness, one transcends it (cessation) through dedicated practice (the path).",
-            "As one progresses, the distinction between martial arts, meditation, and daily life dissolves. Every action becomes an opportunity for practice and awareness."
-          ]
-        },
-        {
-          title: "Modern Applications",
-          description: "Ancient wisdom in contemporary life",
-          images: ["/ShaolinCommunity.png", "/ShiDonnie.png", "/qiGong.png"],
-          text: [
-            "While rooted in tradition, Shaolin wisdom offers profound insights for navigating modern challenges. The mindfulness developed through meditation helps manage stress and digital overwhelm.",
-            "The discipline of regular practice builds resilience and perseverance that transfer to professional and personal goals. The emphasis on community creates supportive relationships in an increasingly isolated world.",
-            "As Master Shi Yanruan often reminds students, 'The true purpose of kung fu is not to conquer others, but to conquer oneself. This victory is relevant in any time, in any place.'"
+            "Shaolin Chui Ba Shi Fa (八式法) represents the eight fundamental combat methods developed over centuries within Shaolin martial traditions.",
+            "These methods encompass the core principles of effective fighting techniques, including precise striking points, tactical positioning, and efficient power generation.",
+            "Mastering these eight methods provides practitioners with a complete system of self-defense that can be adapted to any combat situation or opponent."
           ]
         }
       ]
@@ -277,6 +267,12 @@ const Wisdom = () => {
                                 </div>
                               ))}
                             </div>
+                          ) : section.id === "chuibazhifa" ? (
+                            <img
+                              src={item.image}
+                              alt="Shaolin Chui Ba Shi Fa"
+                              className="w-full rounded-md object-cover shadow-md h-64"
+                            />
                           ) : (
                             <Carousel className="w-full">
                               <CarouselContent>
@@ -298,7 +294,7 @@ const Wisdom = () => {
                           )}
                         </div>
                         <div className="md:w-2/3 space-y-4">
-                          {(section.id === "baduanjin" ? item.text : item.text).map((paragraph, pIdx) => (
+                          {(section.id === "baduanjin" || section.id === "chuibazhifa" ? item.text : item.text).map((paragraph, pIdx) => (
                             <p key={pIdx} className="text-muted-foreground">
                               {paragraph}
                             </p>
