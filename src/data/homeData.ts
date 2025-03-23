@@ -36,8 +36,8 @@ export const instructors = [
   {
     name: "Sifu Shi Yanruan",
     title: "Head Instructor",
-    imageUrl: "/ShiYanruan.png",
-    imageAlt: "Sifu Shi Yanruan",
+    imageUrl: "/lovable-uploads/9368d5cf-432e-438e-800f-3e7774fb8d27.png",
+    imageAlt: "Sifu Shi Yanruan performing a kung fu stance in a grassy field",
     bio: "Master Shi Yanruan, a 34th generation warrior monk of Shaolin Temple, trained under Hu Zhengsheng at a rigorous kung fu academy near Dengfeng as a child before being accepted into Shaolin Temple by Abbot Yongxin. Under the Abbot's guidance, he honed his martial arts skills and later established the Shaolin Temple Kung Fu Cultural Center in Rockville, Maryland—the state's only center led by a Shaolin Temple instructor. Renowned for his global performances alongside Abbot Yongxin, Shi Yanruan has taught students worldwide and now offers an extensive program at the center, including traditional Shaolin fist forms (e.g., Five Steps Fist, Drunken Fist), weapons training (e.g., Shaolin Spear, Drunken Sword), paired practices (e.g., Liuhe Staff), sparring (e.g., Kick Boxing, Grappling), and Soft Qigong (e.g., Yi Jin Jing, meditation).",
   },
   {
