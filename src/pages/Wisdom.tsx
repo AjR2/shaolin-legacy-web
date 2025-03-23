@@ -8,6 +8,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { BookOpen, GraduationCap, Brain, Library } from "lucide-react";
 
 const Wisdom = () => {
@@ -20,7 +27,7 @@ const Wisdom = () => {
         {
           title: "Zen Philosophy",
           description: "The core principles of Zen in Shaolin practice",
-          imageUrl: "/fiveElements.png",
+          images: ["/fiveElements.png", "/ShiYongxin.png", "/fourPoints.png"],
           text: [
             "Zen Buddhism, also known as Chan in Chinese, lies at the heart of Shaolin philosophy. It emphasizes direct experience rather than theoretical knowledge, with meditation as the primary practice for understanding one's true nature.",
             "In Shaolin training, Zen philosophy manifests as the unity of mind and body, where physical actions become a form of moving meditation. The practitioner seeks to achieve a state of 'no-mind' (wuxin) where actions flow naturally without conscious effort.",
@@ -30,7 +37,7 @@ const Wisdom = () => {
         {
           title: "Buddhist Ethics",
           description: "The moral foundation of Shaolin practice",
-          imageUrl: "/ShiYongxin.png",
+          images: ["/ShiYongxin.png", "/practice.png", "/threeSections.png"],
           text: [
             "The Five Precepts form the ethical foundation of Buddhist practice: abstaining from killing, stealing, sexual misconduct, lying, and intoxication. These moral guidelines shape not only the monk's behavior but also inform the purpose and application of martial arts.",
             "Shaolin practitioners are taught to use their skills for protection and defense, never for aggression or personal gain. The concept of 'wu-de' (martial virtue) emphasizes respect, humility, patience, and self-control.",
@@ -47,7 +54,7 @@ const Wisdom = () => {
         {
           title: "Seated Meditation",
           description: "Traditional techniques for cultivating awareness",
-          imageUrl: "/ShiDonnie.png",
+          images: ["/ShiDonnie.png", "/qiGong.png", "/threeSections.png"],
           text: [
             "Seated meditation (zazen) forms the foundation of Shaolin practice. Practitioners sit in lotus or half-lotus position, focusing on breath and maintaining awareness of the present moment.",
             "The practice begins with breath counting (shu-soku) to develop concentration, progressing to breath awareness (zu-shin) and eventually to shikantaza ('just sitting') where one remains alert and present without focusing on any particular object.",
@@ -57,7 +64,7 @@ const Wisdom = () => {
         {
           title: "Moving Meditation",
           description: "Integrating mindfulness into movement",
-          imageUrl: "/qiGong.png",
+          images: ["/qiGong.png", "/fourPoints.png", "/practice.png"],
           text: [
             "Qigong and Tai Chi serve as bridges between seated meditation and dynamic kung fu practice. These 'moving meditations' cultivate awareness of subtle energy (qi) while strengthening the body.",
             "In advanced practice, all kung fu forms become meditative. The practitioner maintains complete awareness while executing techniques, entering a flow state where action becomes effortless and time seems to slow down.",
@@ -74,7 +81,7 @@ const Wisdom = () => {
         {
           title: "Traditional Chinese Medicine",
           description: "Ancient healing arts of the Shaolin Temple",
-          imageUrl: "/threeSections.png",
+          images: ["/threeSections.png", "/ShiYanruan.png", "/practice.png"],
           text: [
             "Shaolin monks developed extensive knowledge of human anatomy and medicinal herbs, creating a comprehensive system of healing to address injuries from training and combat.",
             "The concept of meridians (energy channels) and acupoints informs both healing practices and martial applications. Knowledge of vital points can be used to restore health or, in combat situations, to neutralize an opponent.",
@@ -84,7 +91,7 @@ const Wisdom = () => {
         {
           title: "Dietary Practices",
           description: "Nutritional wisdom from Shaolin tradition",
-          imageUrl: "/practice.png",
+          images: ["/practice.png", "/ShiDonnie.png", "/fiveElements.png"],
           text: [
             "Traditionally, Shaolin monks followed a vegetarian diet in accordance with Buddhist precepts, believing that this practice supports both physical health and spiritual development.",
             "Foods are classified according to their energetic properties (heating, cooling, neutral) and selected to balance the individual's constitution and address specific health conditions.",
@@ -101,7 +108,7 @@ const Wisdom = () => {
         {
           title: "Core Teachings",
           description: "Essential wisdom passed through generations",
-          imageUrl: "/fourPoints.png",
+          images: ["/fourPoints.png", "/ShiYanruan.png", "/threeSections.png"],
           text: [
             "The Four Noble Truths form the foundation of Buddhist teaching: the truth of suffering, the cause of suffering, the cessation of suffering, and the path leading to the cessation of suffering.",
             "In Shaolin practice, these truths are applied practically. Physical training may involve discomfort (truth of suffering), which stems from resistance and attachment (cause). By accepting and moving through discomfort with awareness, one transcends it (cessation) through dedicated practice (the path).",
@@ -111,7 +118,7 @@ const Wisdom = () => {
         {
           title: "Modern Applications",
           description: "Ancient wisdom in contemporary life",
-          imageUrl: "/ShaolinCommunity.png",
+          images: ["/ShaolinCommunity.png", "/ShiDonnie.png", "/qiGong.png"],
           text: [
             "While rooted in tradition, Shaolin wisdom offers profound insights for navigating modern challenges. The mindfulness developed through meditation helps manage stress and digital overwhelm.",
             "The discipline of regular practice builds resilience and perseverance that transfer to professional and personal goals. The emphasis on community creates supportive relationships in an increasingly isolated world.",
@@ -150,11 +157,23 @@ const Wisdom = () => {
                   <CardContent>
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="md:w-1/3 flex-shrink-0">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.title}
-                          className="w-full rounded-md object-cover shadow-md h-64"
-                        />
+                        <Carousel className="w-full">
+                          <CarouselContent>
+                            {item.images.map((image, imageIdx) => (
+                              <CarouselItem key={imageIdx}>
+                                <div className="p-1">
+                                  <img
+                                    src={image}
+                                    alt={`${item.title} - Image ${imageIdx + 1}`}
+                                    className="w-full rounded-md object-cover shadow-md h-64"
+                                  />
+                                </div>
+                              </CarouselItem>
+                            ))}
+                          </CarouselContent>
+                          <CarouselPrevious className="left-2" />
+                          <CarouselNext className="right-2" />
+                        </Carousel>
                       </div>
                       <div className="md:w-2/3 space-y-4">
                         {item.text.map((paragraph, pIdx) => (
