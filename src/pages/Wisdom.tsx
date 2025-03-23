@@ -14,7 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { BookOpen, GraduationCap, Brain, Library, Dumbbell, ListOrdered } from "lucide-react";
+import { BookOpen, GraduationCap, Brain, Library, Dumbbell, ListOrdered, Scroll } from "lucide-react";
 
 const Wisdom = () => {
   const wisdomSections = [
@@ -129,28 +129,33 @@ const Wisdom = () => {
       ]
     },
     {
-      id: "meditation",
-      title: "Meditation",
-      icon: BookOpen,
+      id: "manuscripts",
+      title: "Manuscripts",
+      icon: Scroll,
       content: [
         {
-          title: "Seated Meditation",
-          description: "Traditional techniques for cultivating awareness",
-          images: ["/ShiDonnie.png", "/qiGong.png", "/threeSections.png"],
+          title: "Ancient Shaolin Manuscripts",
+          description: "A collection of rare Shaolin texts and scrolls",
+          images: [
+            "/ShiDonnie.png", 
+            "/qiGong.png", 
+            "/threeSections.png", 
+            "/ShiYanruan.png", 
+            "/practice.png", 
+            "/fourPoints.png", 
+            "/fiveElements.png", 
+            "/ShiYongxin.png", 
+            "/ShaolinCommunity.png", 
+            "/shiWuShanlin.png", 
+            "/shiWuGulun.png", 
+            "/shihaifa.png", 
+            "/shiZhanmo.png", 
+            "/yangGuiwu.png"
+          ],
           text: [
-            "Seated meditation (zazen) forms the foundation of Shaolin practice. Practitioners sit in lotus or half-lotus position, focusing on breath and maintaining awareness of the present moment.",
-            "The practice begins with breath counting (shu-soku) to develop concentration, progressing to breath awareness (zu-shin) and eventually to shikantaza ('just sitting') where one remains alert and present without focusing on any particular object.",
-            "Regular meditation practice develops concentration, emotional stability, and cultivates the 'warrior's mind' - calm and clear even in challenging situations."
-          ]
-        },
-        {
-          title: "Moving Meditation",
-          description: "Integrating mindfulness into movement",
-          images: ["/qiGong.png", "/fourPoints.png", "/practice.png"],
-          text: [
-            "Qigong and Tai Chi serve as bridges between seated meditation and dynamic kung fu practice. These 'moving meditations' cultivate awareness of subtle energy (qi) while strengthening the body.",
-            "In advanced practice, all kung fu forms become meditative. The practitioner maintains complete awareness while executing techniques, entering a flow state where action becomes effortless and time seems to slow down.",
-            "Master Shi Yanruan teaches that 'When mind and body are unified, even the most complex movements become simple. This is the true meaning of kung fu.'"
+            "These ancient manuscripts preserved through generations provide a window into the accumulated wisdom of Shaolin Temple's thousand-year history.",
+            "Each manuscript contains unique insights into the philosophy, technique, and spiritual aspects of Shaolin practice that forms the foundation of our tradition.",
+            "The preservation of these texts connects modern practitioners to an unbroken lineage of knowledge dating back to the temple's earliest days."
           ]
         }
       ]
@@ -260,6 +265,18 @@ const Wisdom = () => {
                               alt={`${item.title}`}
                               className="w-full rounded-md object-cover shadow-md h-64"
                             />
+                          ) : section.id === "manuscripts" ? (
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                              {item.images.map((image, imageIdx) => (
+                                <div key={imageIdx} className="relative aspect-square">
+                                  <img
+                                    src={image}
+                                    alt={`Manuscript ${imageIdx + 1}`}
+                                    className="w-full h-full rounded-md object-cover shadow-md"
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           ) : (
                             <Carousel className="w-full">
                               <CarouselContent>
