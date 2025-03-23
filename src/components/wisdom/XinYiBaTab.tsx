@@ -2,6 +2,13 @@
 import React from "react";
 import WisdomCard from "./WisdomCard";
 import { WisdomSection } from "./WisdomTabs";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface XinYiBaTabProps {
   section: WisdomSection;
@@ -15,17 +22,25 @@ const XinYiBaTab = ({ section }: XinYiBaTabProps) => {
           key={idx}
           item={item}
           renderMedia={() => (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-              {item.images?.map((image, imageIdx) => (
-                <div key={imageIdx} className="relative aspect-square">
-                  <img
-                    src={image}
-                    alt={`Xin Yi Ba ${imageIdx + 1}`}
-                    className="w-full h-full rounded-md object-cover shadow-md"
-                  />
-                </div>
-              ))}
-            </div>
+            item.images && item.images.length > 0 ? (
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {item.images.map((image, imageIdx) => (
+                    <CarouselItem key={imageIdx}>
+                      <div className="relative aspect-square p-1">
+                        <img
+                          src={image}
+                          alt={`Xin Yi Ba ${imageIdx + 1}`}
+                          className="w-full h-full rounded-md object-cover shadow-md"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
+            ) : null
           )}
         />
       ))}
