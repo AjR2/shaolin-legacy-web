@@ -152,8 +152,8 @@ const Index = () => {
           <CardContent className="space-y-4">
             <div className="aspect-w-16 aspect-h-9">
               <img
-                src="/SifuWoodStance.png"
-                alt="Sifu John Smith"
+                src="/ShiYongxin.png"
+                alt="Sifu shiyongxin"
                 className="w-full h-64 object-cover rounded-md"
               />
             </div>
