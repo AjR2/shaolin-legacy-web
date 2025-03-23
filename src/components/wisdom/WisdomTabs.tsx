@@ -1,4 +1,3 @@
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, GraduationCap, Brain, Library, Dumbbell, ListOrdered, Scroll } from "lucide-react";
 import BaDuanJinTab from "./BaDuanJinTab";
@@ -45,6 +44,9 @@ export const wisdomSections: WisdomSection[] = [
           "Two Hands Hold the Feet to Strengthen the Kidneys and Waist",
           "Clench the Fists and Glare Fiercely",
           "Bouncing on the Toes"
+        ],
+        text: [
+          "Ba Duan Jin, or Eight Pieces of Brocade, is one of the most widely practiced qigong exercise sets. These eight exercises work on different aspects of the body to promote health and well-being."
         ]
       },
       {
