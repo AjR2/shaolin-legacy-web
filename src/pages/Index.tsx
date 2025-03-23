@@ -139,14 +139,14 @@ const Index = () => {
               />
             </div>
             <p className="text-muted-foreground">
-              With over 30 years of experience in traditional Shaolin Kung Fu, Sifu Yanruan brings authentic teachings directly from the Shaolin Temple. He specializes in both internal and external martial arts practices.
+            Master Shi Yanruan, a 34th generation warrior monk of Shaolin Temple, trained under Hu Zhengsheng at a rigorous kung fu academy near Dengfeng as a child before being accepted into Shaolin Temple by Abbot Yongxin. Under the Abbot’s guidance, he honed his martial arts skills and later established the Shaolin Temple Kung Fu Cultural Center in Rockville, Maryland—the state’s only center led by a Shaolin Temple instructor. Renowned for his global performances alongside Abbot Yongxin, Shi Yanruan has taught students worldwide and now offers an extensive program at the center, including traditional Shaolin fist forms (e.g., Five Steps Fist, Drunken Fist), weapons training (e.g., Shaolin Spear, Drunken Sword), paired practices (e.g., Liuhe Staff), sparring (e.g., Kick Boxing, Grappling), and Soft Qigong (e.g., Yi Jin Jing, meditation).
             </p>
           </CardContent>
         </Card>
 
         <Card className="overflow-hidden">
           <CardHeader>
-            <CardTitle>Sifu John Smith</CardTitle>
+            <CardTitle>Shi Yongxin</CardTitle>
             <CardDescription>Senior Instructor</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -158,7 +158,7 @@ const Index = () => {
               />
             </div>
             <p className="text-muted-foreground">
-              With 20 years of dedicated practice, Sifu John specializes in teaching traditional Shaolin forms and applications. His focus on detail and patient instruction makes complex movements accessible to students of all levels.
+            Born Liu Yingcheng in 1965 in Yingshang, Anhui Province, Master Yong Xin was ordained in 1981 under Abbot Xingzheng and became the 30th generation Abbot of Songshan Shaolin Temple in August 1999. He holds prominent roles as vice president of the China Buddhism Association, president of the Henan Province Buddhism Association, and a representative of the 9th and 10th National People’s Congress of China. In 2002, he led the registration of Shaolin Kungfu with UNESCO to preserve its 1,500-year legacy, and in 2003, he opened the Shaolin Orphan Center for the “Thousand-orphan and Light-opening” project. Abbot Yong Xin has significantly advanced Shaolin Temple’s development and globally promoted its rich culture.
             </p>
           </CardContent>
         </Card>
