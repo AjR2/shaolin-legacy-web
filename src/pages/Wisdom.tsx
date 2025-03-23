@@ -15,33 +15,101 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { BookOpen, GraduationCap, Brain, Library } from "lucide-react";
+import { BookOpen, GraduationCap, Brain, Library, Dumbbell } from "lucide-react";
 
 const Wisdom = () => {
   const wisdomSections = [
     {
-      id: "philosophy",
-      title: "Philosophy",
-      icon: Brain,
+      id: "baduanjin",
+      title: "Ba Duan Jin",
+      icon: Dumbbell,
       content: [
         {
-          title: "Zen Philosophy",
-          description: "The core principles of Zen in Shaolin practice",
-          images: ["/fiveElements.png", "/ShiYongxin.png", "/fourPoints.png"],
+          title: "Two Hands Hold up the Heavens",
+          description: "Harmonizes the triple burner and regulates the spleen and stomach",
+          image: "/practice.png",
           text: [
-            "Zen Buddhism, also known as Chan in Chinese, lies at the heart of Shaolin philosophy. It emphasizes direct experience rather than theoretical knowledge, with meditation as the primary practice for understanding one's true nature.",
-            "In Shaolin training, Zen philosophy manifests as the unity of mind and body, where physical actions become a form of moving meditation. The practitioner seeks to achieve a state of 'no-mind' (wuxin) where actions flow naturally without conscious effort.",
-            "The famous saying 'The way of Zen is direct pointing to the human mind' embodies this approach, encouraging practitioners to look inward rather than seeking external validation or knowledge."
+            "Stand with feet shoulder-width apart, arms relaxed at your sides, and knees slightly bent in a natural, comfortable posture.",
+            "Inhale as you slowly raise your arms forward and upward, palms facing up, until hands meet above your head. Keep shoulders relaxed throughout the movement.",
+            "As your hands meet, turn palms to face upward as if supporting the sky, gently stretching the whole body. Look straight ahead, not up at your hands.",
+            "Exhale as you slowly lower your arms to the sides in a wide arc, returning to the starting position. Repeat 8 times."
           ]
         },
         {
-          title: "Buddhist Ethics",
-          description: "The moral foundation of Shaolin practice",
-          images: ["/ShiYongxin.png", "/practice.png", "/threeSections.png"],
+          title: "Drawing the Bow to Shoot the Eagle",
+          description: "Enhances the function of the lungs and expands the chest",
+          image: "/ShiDonnie.png",
           text: [
-            "The Five Precepts form the ethical foundation of Buddhist practice: abstaining from killing, stealing, sexual misconduct, lying, and intoxication. These moral guidelines shape not only the monk's behavior but also inform the purpose and application of martial arts.",
-            "Shaolin practitioners are taught to use their skills for protection and defense, never for aggression or personal gain. The concept of 'wu-de' (martial virtue) emphasizes respect, humility, patience, and self-control.",
-            "As the Venerable Abbot Shi Yongxin teaches, 'True kung fu begins and ends with virtue. Without virtue, skill is merely technique without purpose.'"
+            "Stand with feet wider than shoulder-width apart in a horse stance, knees bent and pointing outward.",
+            "Cross arms in front of chest, then extend left arm to the left side as if drawing a bow, with left index finger pointing outward and thumb up.",
+            "Right hand pulls back beside the right ear as if holding the bowstring, with right index and middle fingers extended. Turn head to look at the left extended hand.",
+            "Return to center and repeat on the opposite side. Alternate sides for a total of 8 repetitions on each side."
+          ]
+        },
+        {
+          title: "Separate Heaven and Earth",
+          description: "Regulates the spleen and stomach functions",
+          image: "/qiGong.png",
+          text: [
+            "Begin in a shoulder-width stance with arms relaxed at your sides.",
+            "Raise both palms to chest height, one hand facing up (heaven) and one facing down (earth).",
+            "Slowly extend the arms, pushing one palm upward and one downward while inhaling, creating a gentle stretch through the torso.",
+            "Return hands to chest height, switch palm directions, and repeat the movement. Perform 8 repetitions on each side."
+          ]
+        },
+        {
+          title: "Wise Owl Gazes Backward",
+          description: "Strengthens the neck and eyes, releases tension in neck and shoulders",
+          image: "/ShiYanruan.png",
+          text: [
+            "Stand with feet shoulder-width apart, arms hanging naturally at sides.",
+            "Without moving the body, slowly turn the head to look over one shoulder, as far as is comfortable without straining.",
+            "Return to center, then turn to look over the opposite shoulder. Keep shoulders relaxed and breathing even throughout.",
+            "For an advanced version, synchronize the turning with your breath. Perform 8 repetitions on each side."
+          ]
+        },
+        {
+          title: "Sway the Head and Swing the Tail",
+          description: "Relieves stress and strain in the waist area",
+          image: "/fourPoints.png",
+          text: [
+            "Stand with feet wider than shoulder-width apart, hands on hips or thighs, knees slightly bent.",
+            "Rotate the upper body to one side, then bend forward from the waist, allowing the opposite arm to swing toward the foot.",
+            "Rise back up and rotate to the other side, repeating the movement. Keep the movement smooth and controlled.",
+            "Throughout the exercise, imagine your body as a large bow being drawn. Perform 8 repetitions on each side."
+          ]
+        },
+        {
+          title: "Two Hands Hold the Feet to Strengthen the Kidneys and Waist",
+          description: "Benefits the kidneys and strengthens the lower back",
+          image: "/threeSections.png",
+          text: [
+            "Stand with feet shoulder-width apart, arms at sides, knees slightly bent.",
+            "Inhale, then exhale as you bend forward from the waist, keeping back straight initially, then allowing it to round.",
+            "Reach down to touch ankles or feet, depending on flexibility. Keep knees slightly bent to avoid strain.",
+            "Inhale as you slowly roll back up to standing position, one vertebra at a time. Repeat 8 times, breathing naturally."
+          ]
+        },
+        {
+          title: "Clench the Fists and Glare Fiercely",
+          description: "Increases general vitality and strengthens muscles",
+          image: "/fiveElements.png",
+          text: [
+            "Begin in a horse stance with feet wider than shoulders and toes pointing slightly outward.",
+            "Make loose fists at your sides, then slowly raise them to waist height while inhaling.",
+            "Extend one arm forward with force while pulling the other back to the waist, turning the head to follow the forward punch. Make a fierce facial expression.",
+            "Alternate sides with controlled, powerful movements. Complete 8 repetitions on each side."
+          ]
+        },
+        {
+          title: "Bouncing on the Toes",
+          description: "Harmonizes all organ functions and expels illness",
+          image: "/ShiYongxin.png",
+          text: [
+            "Stand naturally with feet shoulder-width apart, arms relaxed at sides.",
+            "Rise up onto the balls of both feet, lifting heels off the ground, then lower heels back down gently.",
+            "The movement should be gentle and springy, not forceful. Keep the body relaxed and maintain balance.",
+            "Breathe naturally, coordinating breath with the up and down movements. Repeat 8 times or more."
           ]
         }
       ]
@@ -133,7 +201,7 @@ const Wisdom = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-3xl font-bold text-temple-900 mb-8">Shaolin Wisdom</h1>
       
-      <Tabs defaultValue="philosophy" className="space-y-6">
+      <Tabs defaultValue="baduanjin" className="space-y-6">
         <TabsList className="grid w-full grid-cols-4">
           {wisdomSections.map((section) => (
             <TabsTrigger key={section.id} value={section.id}>
@@ -157,26 +225,34 @@ const Wisdom = () => {
                   <CardContent>
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="md:w-1/3 flex-shrink-0">
-                        <Carousel className="w-full">
-                          <CarouselContent>
-                            {item.images.map((image, imageIdx) => (
-                              <CarouselItem key={imageIdx}>
-                                <div className="p-1">
-                                  <img
-                                    src={image}
-                                    alt={`${item.title} - Image ${imageIdx + 1}`}
-                                    className="w-full rounded-md object-cover shadow-md h-64"
-                                  />
-                                </div>
-                              </CarouselItem>
-                            ))}
-                          </CarouselContent>
-                          <CarouselPrevious className="left-2" />
-                          <CarouselNext className="right-2" />
-                        </Carousel>
+                        {section.id === "baduanjin" ? (
+                          <img
+                            src={item.image}
+                            alt={`${item.title}`}
+                            className="w-full rounded-md object-cover shadow-md h-64"
+                          />
+                        ) : (
+                          <Carousel className="w-full">
+                            <CarouselContent>
+                              {item.images.map((image, imageIdx) => (
+                                <CarouselItem key={imageIdx}>
+                                  <div className="p-1">
+                                    <img
+                                      src={image}
+                                      alt={`${item.title} - Image ${imageIdx + 1}`}
+                                      className="w-full rounded-md object-cover shadow-md h-64"
+                                    />
+                                  </div>
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="left-2" />
+                            <CarouselNext className="right-2" />
+                          </Carousel>
+                        )}
                       </div>
                       <div className="md:w-2/3 space-y-4">
-                        {item.text.map((paragraph, pIdx) => (
+                        {(section.id === "baduanjin" ? item.text : item.text).map((paragraph, pIdx) => (
                           <p key={pIdx} className="text-muted-foreground">
                             {paragraph}
                           </p>
