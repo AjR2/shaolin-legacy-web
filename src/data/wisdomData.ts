@@ -156,7 +156,21 @@ export const wisdomSections: WisdomSection[] = [
           "/shiWuGulun.png", 
           "/shihaifa.png", 
           "/shiZhanmo.png", 
-          "/yangGuiwu.png"
+          "/yangGuiwu.png",
+          "/lovable-uploads/d016d8ff-38a8-4498-999a-72f5fcdcb982.png",
+          "/lovable-uploads/b6a55430-a5f9-4c7e-917f-bc7d60d03da3.png",
+          "/lovable-uploads/58164000-cb2a-46c6-b052-ee29c709014c.png",
+          "/lovable-uploads/8afc7d0c-fe60-40de-b6a1-8a927ffbdc74.png",
+          "/lovable-uploads/2216950d-da8c-4cce-b6ec-ae19e9c2fae7.png",
+          "/lovable-uploads/356d6015-b6ad-4441-b11d-de443198d4f8.png",
+          "/lovable-uploads/24501f4b-19ce-4ca3-b089-39e280e6f226.png",
+          "/lovable-uploads/65cdb515-7945-40e7-af1e-01ed628baeb3.png",
+          "/lovable-uploads/b727064d-b6cd-4ec0-8263-e7abe1981e92.png",
+          "/lovable-uploads/f8fc9ce1-6dbc-4bc6-8b3c-460850640007.png",
+          "/lovable-uploads/3a1d0127-e17b-4721-8ac5-2c540ff27033.png",
+          "/lovable-uploads/24297050-a5eb-4827-b9c0-69a6d4d1d983.png",
+          "/lovable-uploads/b1fc912b-ed40-4a76-93dc-ecca292f108d.png",
+          "/lovable-uploads/eb71e1f1-3b50-43ae-8e69-9b01aa5e69cb.png"
         ],
         text: [
           "These ancient manuscripts preserved through generations provide a window into the accumulated wisdom of Shaolin Temple's thousand-year history.",

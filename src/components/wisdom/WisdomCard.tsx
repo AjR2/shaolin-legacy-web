@@ -40,10 +40,10 @@ const WisdomCard = ({ item, renderMedia }: WisdomCardProps) => {
           </div>
         ) : (
           <div className="flex flex-col md:flex-row gap-6">
-            <div className="md:w-1/3 flex-shrink-0">
+            <div className={`${item.images && item.images.length > 0 ? 'md:w-1/2' : 'md:w-1/3'} flex-shrink-0`}>
               {renderMedia()}
             </div>
-            <div className="md:w-2/3 space-y-4">
+            <div className={`${item.images && item.images.length > 0 ? 'md:w-1/2' : 'md:w-2/3'} space-y-4`}>
               {item.text.map((paragraph, pIdx) => (
                 <p key={pIdx} className="text-muted-foreground">
                   {paragraph}
