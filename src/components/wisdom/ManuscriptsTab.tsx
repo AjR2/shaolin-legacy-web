@@ -41,7 +41,7 @@ const ManuscriptsTab = ({ section }: ManuscriptsTabProps) => {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none">
+                  <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 z-10">
                     <CarouselPrevious className="relative pointer-events-auto" />
                     <CarouselNext className="relative pointer-events-auto" />
                   </div>
