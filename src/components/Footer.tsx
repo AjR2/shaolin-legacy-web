@@ -8,7 +8,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-center gap-8">
           <div className="flex-shrink-0 w-full md:w-36 lg:w-48 flex justify-center md:justify-start">
             <img 
-              src="/学校LOGO新 (1).png" 
+              src="/LOGO.png" 
               alt="Shaolin Temple Logo" 
               className="w-24 h-24 object-contain"
             />
