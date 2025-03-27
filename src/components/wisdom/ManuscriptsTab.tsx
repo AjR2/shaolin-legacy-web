@@ -30,7 +30,7 @@ const ManuscriptsTab = ({ section }: ManuscriptsTabProps) => {
                     {item.images.map((image, imageIdx) => (
                       <CarouselItem key={imageIdx}>
                         <Card className="overflow-hidden">
-                          <div className="relative aspect-[3/4] sm:aspect-[4/5] w-full">
+                          <div className="relative aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4] w-full">
                             <img
                               src={image}
                               alt={`Ancient Shaolin Manuscript ${imageIdx + 1}`}
