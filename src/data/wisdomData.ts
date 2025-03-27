@@ -215,7 +215,7 @@ export const wisdomSections: WisdomSection[] = [
       {
         title: "Shaolin Chui Ba Shi Fa",
         description: "The Eight Methods of Combat",
-        image: "/ShiYanruan.png",
+        image: "/lovable-uploads/aa0c1609-bbd6-42da-b609-f2711bc4b863.png",
         text: [
           "Shaolin Chui Ba Shi Fa (八式法) represents the eight fundamental combat methods developed over centuries within Shaolin martial traditions.",
           "These methods encompass the core principles of effective fighting techniques, including precise striking points, tactical positioning, and efficient power generation.",
