@@ -1,0 +1,103 @@
+
+import { Photo } from "../mediaTypes";
+
+export const masterPhotos: Photo[] = [
+  {
+    title: "Master Demonstration",
+    description: "Sifu demonstrating advanced techniques",
+    imageUrl: "/SifuWoodStance.png",
+    date: "2023",
+    category: "yanruan",
+  },
+  {
+    title: "Abbot Visit",
+    description: "Venerable Abbot Shi Yongxin's visit to our school",
+    imageUrl: "/ShiYongxin.png",
+    date: "2022",
+    category: "yongxin",
+  },
+  {
+    title: "Historical Training Form",
+    description: "Ancient Shaolin master demonstrating a training technique on roof",
+    imageUrl: "/lovable-uploads/2d276b0c-0b55-4999-a1a3-39849ae3558a.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Temple Elder",
+    description: "Shaolin monk in traditional robes with walking staff",
+    imageUrl: "/lovable-uploads/6458b8be-f87e-4181-bb35-a707fae36f11.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Master Meditation",
+    description: "Elder Shaolin master in deep focus during stone breaking practice",
+    imageUrl: "/lovable-uploads/f7803e32-915a-43a2-8d3c-ac6d6098d80f.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Combat Training",
+    description: "Two masters demonstrating Shaolin combat techniques",
+    imageUrl: "/lovable-uploads/44af3d9d-0364-44a6-83cf-32bda2225b1d.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Sword Practice",
+    description: "Master demonstrating traditional sword form",
+    imageUrl: "/lovable-uploads/00cd9e9e-ad0e-4cc5-ad5e-76c1885f146f.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Temple Gathering",
+    description: "Shaolin master with temple disciples and visitors",
+    imageUrl: "/lovable-uploads/a7b9deae-3349-4da6-87ce-3d9135a2d900.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Seated Master",
+    description: "Elder Shaolin master in traditional robes on temple grounds",
+    imageUrl: "/lovable-uploads/7ac5b06c-0d66-4f7a-bc94-2fc0a1e3dc5c.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Kung Fu Stance",
+    description: "Master demonstrating traditional Shaolin stance",
+    imageUrl: "/lovable-uploads/6f4ce858-bd20-48d1-9a4d-44bdecfa1665.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Balance Training",
+    description: "Master performing advanced balance technique",
+    imageUrl: "/lovable-uploads/09c1a5c7-27f4-4c91-b913-07911185c2f5.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Temple Courtyard",
+    description: "Young monk practicing traditional form",
+    imageUrl: "/lovable-uploads/1c8e4764-7384-4d57-ac76-632a74a87702.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Temple Practice",
+    description: "Master in formal pose demonstrating hand technique",
+    imageUrl: "/lovable-uploads/62aeef18-b162-47a9-af83-e1c01d2dccba.png",
+    date: "Historical",
+    category: "master",
+  },
+  {
+    title: "Mountain Training",
+    description: "Elder master in traditional garb with sword",
+    imageUrl: "/lovable-uploads/73e29cbd-0d08-47eb-b4d3-b800516c114f.png",
+    date: "Historical",
+    category: "master",
+  },
+];
