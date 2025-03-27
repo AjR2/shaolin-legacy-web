@@ -1,3 +1,4 @@
+
 import { Dumbbell, Scroll, GraduationCap, ListOrdered, type LucideIcon } from "lucide-react";
 
 // Define the wisdom section type
@@ -188,15 +189,15 @@ export const wisdomSections: WisdomSection[] = [
         title: "Xin Yi Ba Practice",
         description: "Traditional movements of Xin Yi Ba",
         images: [
-          "/ShiDonnie.png", 
-          "/qiGong.png", 
-          "/threeSections.png", 
-          "/ShiYanruan.png", 
-          "/practice.png", 
-          "/fourPoints.png", 
-          "/fiveElements.png", 
-          "/ShiYongxin.png", 
-          "/ShaolinCommunity.png"
+          "/lovable-uploads/162145fd-dc67-4550-9121-ba19d3390180.png",
+          "/lovable-uploads/613cb4a7-3d13-4915-a6b4-6fedaf9e5ef3.png",
+          "/lovable-uploads/b2fdde3a-9d57-412c-a5c0-a49ce1c60d0e.png",
+          "/lovable-uploads/a5e51744-9131-4f4a-b55a-8aaad6301424.png",
+          "/lovable-uploads/8bdc160d-af50-4c78-a551-7c155b8c0471.png",
+          "/lovable-uploads/9bba06fe-39c9-4b0b-aec4-b8f1bb702538.png",
+          "/lovable-uploads/e3f3d799-5fa0-472b-be64-859f55ad0afd.png",
+          "/lovable-uploads/01bafb8f-18e1-4cea-93c4-89704e63bd92.png",
+          "/lovable-uploads/4e738003-15ef-4b20-9fba-5460d02eaf32.png"
         ],
         text: [
           "Xin Yi Ba is a traditional internal martial art that focuses on heart (Xin) and mind (Yi) cultivation through eight (Ba) fundamental movements.",
