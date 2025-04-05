@@ -11,4 +11,15 @@ if (!urlParams.has('forceHideBadge')) {
   window.history.replaceState({}, document.title, url.toString());
 }
 
+// Additional method to hide Lovable badge by directly targeting its element
+window.addEventListener('DOMContentLoaded', () => {
+  // Use a small delay to ensure the badge has time to render
+  setTimeout(() => {
+    const badgeElement = document.querySelector('.lovable-badge');
+    if (badgeElement) {
+      badgeElement.style.display = 'none';
+    }
+  }, 500);
+});
+
 createRoot(document.getElementById("root")!).render(<App />);
