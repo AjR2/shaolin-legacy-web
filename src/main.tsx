@@ -17,7 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const badgeElement = document.querySelector('.lovable-badge');
     if (badgeElement) {
-      badgeElement.style.display = 'none';
+      // Cast the element to HTMLElement to access style property
+      (badgeElement as HTMLElement).style.display = 'none';
     }
   }, 500);
 });
