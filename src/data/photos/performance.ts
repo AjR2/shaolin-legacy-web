@@ -3,8 +3,8 @@ import { Photo } from "../mediaTypes";
 
 export const performancePhotos: Photo[] = [
   {
-    title: "Competition Team",
-    description: "Our students at the national championship",
+    title: "Student Medal",
+    description: "A student receiving a medal at competition",
     imageUrl: "/asherComp.png",
     date: "2023",
     category: "performance",
@@ -18,7 +18,7 @@ export const performancePhotos: Photo[] = [
   },
   {
     title: "Staff Demonstration Team",
-    description: "Group of practitioners performing staff forms during Lunar New Year celebration",
+    description: "Group of practitioners performing staff forms",
     imageUrl: "/lovable-uploads/d1971118-d739-4272-86b4-e8c9d7f45d1b.png",
     date: "2023",
     category: "performance",
@@ -53,7 +53,7 @@ export const performancePhotos: Photo[] = [
   },
   {
     title: "Young Form Demonstrator",
-    description: "Young student performing traditional stance at cultural center",
+    description: "Young student performing traditional stance at cultural event",
     imageUrl: "/lovable-uploads/aa3ba06d-3e84-47b1-9648-c74b08af779b.png",
     date: "2023",
     category: "performance",
@@ -73,15 +73,15 @@ export const performancePhotos: Photo[] = [
     category: "performance",
   },
   {
-    title: "Group Performance",
-    description: "Students performing in unison at community cultural event",
+    title: "Children's Performance Group",
+    description: "Young students demonstrating martial arts moves in formation",
     imageUrl: "/lovable-uploads/1db69471-b6c1-4302-95f4-4e8dae6f2163.png",
     date: "2023",
     category: "performance",
   },
   {
-    title: "Children's Performance Group",
-    description: "Young students demonstrating martial arts moves in formation",
+    title: "Group Performance",
+    description: "Students performing in unison at community cultural event",
     imageUrl: "/lovable-uploads/f5e659b3-0cee-4037-958f-5f14e9f2cdae.png",
     date: "2023",
     category: "performance",
