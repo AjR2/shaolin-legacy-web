@@ -3,7 +3,7 @@ export const carouselImages = [
   {
     url: "SifuWoodStance.png",
     alt: "Sifu practicing kung fu in the woods",
-    caption: "Weapons and Woods",
+    caption: "Shifu Demonstrating Forms",
   },
   {
     url: "ShiDonnie.png",
@@ -19,10 +19,10 @@ export const carouselImages = [
 
 export const announcements = [
   {
-    title: "New Beginner Class Starting",
-    date: "February 25 2025",
+    title: "Closed for Spring Break",
+    date: "4/7/25",
     content:
-      "Join us for our new beginner class starting next month. Perfect for those new to Kung Fu.",
+      "No Classes will be held from April 13th - April 20th. See Sifu if you would like to makeup a class",
   },
   {
     title: "Closed for the Holidays",
