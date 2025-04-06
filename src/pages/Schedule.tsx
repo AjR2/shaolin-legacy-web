@@ -1,3 +1,4 @@
+
 import { useSchedule } from "@/hooks/useSchedule";
 import { DaySchedule } from "@/components/schedule/DaySchedule";
 import { Skeleton } from "@/components/ui/skeleton";
