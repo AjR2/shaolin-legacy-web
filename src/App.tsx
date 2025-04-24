@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 import Navigation from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import Index from "./pages/Index";
@@ -15,6 +16,11 @@ import Wisdom from "./pages/Wisdom";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// Initialize EmailJS
+emailjs.init({
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
