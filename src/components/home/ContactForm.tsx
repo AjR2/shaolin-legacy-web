@@ -34,9 +34,10 @@ const ContactForm = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID!,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          user_email: formData.email,
           message: formData.message,
+          time: new Date().toLocaleString()
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );

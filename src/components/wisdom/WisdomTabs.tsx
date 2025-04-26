@@ -9,7 +9,7 @@ import { wisdomSections } from "@/data/wisdomData";
 const WisdomTabs = () => {
   return (
     <Tabs defaultValue="baduanjin" className="space-y-6">
-      <TabsList className="grid w-full grid-cols-4">
+      <TabsList className="flex w-full flex-nowrap overflow-x-auto md:grid md:grid-cols-4">
         {wisdomSections.map((section) => (
           <TabsTrigger key={section.id} value={section.id}>
             <div className="flex items-center gap-2">
